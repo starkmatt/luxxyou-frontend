@@ -1,0 +1,22 @@
+
+.placeHolder {
+    position: absolute;
+    display: block;
+    margin-left: auto;
+    padding: .5em;
+    margin-right: auto;
+    width: 90%;
+}
+.fBLogo {
+    position: absolute;
+    left: 70px;
+    bottom: 79px;
+    width: 16px;
+}
+
+.instaLogo {
+    position: absolute;
+    left: 66px;
+    bottom: 39px;
+    width: 24px;
+}
