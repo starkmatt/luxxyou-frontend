@@ -1,10 +1,8 @@
-
 .placeHolder {
     position: absolute;
     display: block;
-    margin-left: auto;
     padding: .5em;
-    margin-right: auto;
+    left: 65px;
     width: 90%;
 }
 .fBLogo {

@@ -15,5 +15,5 @@ To deploy the infrasture, I've used terraform with 3M Methodology, there was an 
 Will eventually move the tfstate file into an S3 bucket and utilize GH Actions for CI/CD
 
 ## Place Holder Design
-![Luxx_You_PH](https://github.com/starkmatt/luxxyou-frontend/blob/master/LuxxYou-Placeholder%20Design%20v1.1.png)
+![Luxx_You_PH](https://github.com/starkmatt/luxxyou-frontend/blob/master/Design/LuxxYou-Placeholder%20Design%20v1.2.png)
 
