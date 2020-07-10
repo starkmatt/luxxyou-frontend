@@ -12,3 +12,6 @@ Once the company is ready to launch, we will more to a more recommended design f
 
 
 To deploy the infrasture, I've used terraform with 3M Methodology, there was an exiting module I've resued but I will need to clean that up from existing work and then upload it to this repo.
+
+## Place Holder Design
+
