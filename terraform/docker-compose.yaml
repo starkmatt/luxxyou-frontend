@@ -1,0 +1,16 @@
+version: '3.2'
+  
+services:
+
+ terraform:
+    image: hashicorp/terraform:0.12.24
+    working_dir: /terraform
+    volumes:
+        - ${PWD}/creds/:/root/.aws/ 
+        - .:/terraform
+
+ aws:
+    image: amazon/aws-cli:2.0.9
+    working_dir: /terraform
+    volumes:
+        - ${PWD}/creds/:/root/.aws/
