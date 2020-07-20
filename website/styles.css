@@ -1,20 +1,34 @@
 .placeHolder {
-    position: absolute;
+    position: relative;
+    overflow: hidden;
     display: block;
-    padding: .5em;
-    left: 65px;
-    width: 90%;
+    left: 11%;
+    height: auto;
+    max-width: 100%;
 }
+
 .fBLogo {
     position: absolute;
-    left: 70px;
-    bottom: 79px;
-    width: 16px;
+    left: 9.1%;
+    bottom: 12%;
+    width: 1.5%;
+    max-width: 100%;
 }
 
 .instaLogo {
     position: absolute;
-    left: 66px;
-    bottom: 39px;
-    width: 24px;
+    left: 8.5%;
+    bottom: 5%;
+    width: 2.5%;
+    max-width: 100%;
+}
+
+@viewport {
+    zoom: 1.0;
+    width: extend-to-zoom;
+}
+
+@-ms-viewport {
+    width: extend-to-zoom;
+    zoom: 1.0;
 }
