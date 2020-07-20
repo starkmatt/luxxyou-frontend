@@ -2,15 +2,17 @@
     position: absolute;
     overflow: hidden;
     display: block;
-    left: 11%;
+    left: 4%;
+    top: -3%;
     height: auto;
     max-width: 100%;
+    width: 90%;
 }
 
 .fBLogo {
     position: absolute;
     left: 45.1%;
-    bottom: 42%;
+    bottom: 29%;
     width: 1.2%;
     max-width: 100%;
 }
@@ -18,7 +20,7 @@
 .instaLogo {
     position: absolute;
     left: 49.5%;
-    bottom: 42%;
+    bottom: 29%;
     width: 2.0%;
     max-width: 100%;
 }
