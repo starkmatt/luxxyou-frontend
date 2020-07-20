@@ -1,5 +1,5 @@
 .placeHolder {
-    position: relative;
+    position: absolute;
     overflow: hidden;
     display: block;
     left: 11%;
@@ -9,26 +9,44 @@
 
 .fBLogo {
     position: absolute;
-    left: 9.1%;
-    bottom: 12%;
-    width: 1.5%;
+    left: 45.1%;
+    bottom: 42%;
+    width: 1.2%;
     max-width: 100%;
 }
 
 .instaLogo {
     position: absolute;
-    left: 8.5%;
-    bottom: 5%;
-    width: 2.5%;
+    left: 49.5%;
+    bottom: 42%;
+    width: 2.0%;
     max-width: 100%;
 }
 
 @viewport {
-    zoom: 1.0;
-    width: extend-to-zoom;
+    width: device-width;
 }
 
 @-ms-viewport {
-    width: extend-to-zoom;
-    zoom: 1.0;
+    width: device-width;
+}
+
+@media screen and (max-width: 600px) {
+	.placeHolder {
+		transform: scale(2);
+		left: -1%;
+		top: 12%;
+	}
+
+	.fBLogo {
+		bottom: 59%;
+		left: 42.9%;
+		transform: scale(1.6);
+	}
+
+	.instaLogo {
+	        bottom: 58.9%;
+		left: 51.4%;
+		transform: scale(1.6);
+       }
 }
