@@ -47,4 +47,12 @@ Depot
     Ꝉ theme-includes.php
     
 ```
+
+Unfortunately the Folder structure of 
+```
+  Ꝉ css
+         ....
+```
+Was to large to upload individually, so the contents of CSS was part uploaded into this Dir here.
+
     
