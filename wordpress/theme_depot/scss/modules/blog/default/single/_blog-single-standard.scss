@@ -1,0 +1,361 @@
+/* ==========================================================================
+   Blog Single Standard style - begin
+   ========================================================================== */
+
+.mkd-blog-holder.mkd-blog-single {
+
+    &.mkd-blog-single-standard {
+        width: 66%;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    
+        article {
+            margin: 0;
+
+            .mkd-post-text-inner {
+                margin-bottom: 110px;
+            }
+
+            .mkd-post-text-main {
+                margin-bottom: 55px;
+            }
+
+            .mkd-post-content {
+                .mkd-post-info-bottom {
+                    text-align: center;
+                    margin-top: 0;
+                    margin-bottom: 0;
+                }
+            }
+
+            .mkd-tags {
+                a {
+                    display: inline-block;
+                    text-transform: uppercase;
+                    color: #848484;
+                    font-size: 9px;
+                    font-weight: 600;
+                    padding: 0 25px;
+                    background-color: transparent;
+                    border: 1px solid #d3d3d3;
+                    height: 29px;
+                    line-height: 31px;
+                    margin-right: 3px;
+                    margin-bottom: 10px;
+                }
+            }
+        
+            .mkd-post-heading {
+                margin-bottom: 28px;
+            }
+        
+            .mkd-post-title {
+                margin: 10px 0 2px;
+                font-size: 24px;
+            }
+
+            .mkd-post-info-date {
+                a {
+                    letter-spacing: 0.1em;
+                    font-weight: bold;
+                    font-size: 12px;
+                }
+            }
+        
+            .mkd-post-text {
+                padding: 0;
+            }
+        
+            .mkd-post-info-top {
+                margin-bottom: 7px;
+
+                .mkd-post-info-author {
+                    text-transform: uppercase;
+                    font-size: 12px;
+                    font-weight: bold;
+                    letter-spacing: 0.1em;
+                    .mkd-post-info-author-link {
+                        color: #404040;
+                    }
+                }
+
+                .mkd-post-info-comments-holder {
+                    a {
+                        font-weight: bold;
+                        font-size: 12px;
+                        &:before {
+                            content: "\76";
+                            font-family: 'ElegantIcons';
+                            font-size: 14px;
+                            padding-right: 10px;
+                        }
+                    }
+                }
+
+                .mkd-post-info-category {
+                    a {
+                        font-weight: bold;
+                        text-transform: uppercase;
+                        color: #464646;
+                        font-size: 12px;
+                        letter-spacing: 0.1em;
+                    }
+                }
+            
+                > div {
+                    position: relative;
+                    display: inline-block;
+                    padding-right: 15px;
+                    margin-right: 3px;
+                    color: $default-text-color;
+                
+                    a {
+                        color: inherit;
+                    
+                        &:hover {
+                            color: $default-heading-color;
+                        }
+                    }
+                
+                    &:last-child {
+                        padding-right: 0;
+                        margin-right: 0;
+                    
+                        &:after {
+                            content: '';
+                        }
+                    }
+                }
+            }
+        
+            .mkd-post-info-bottom {
+                @include mkdRelativeHolderLayout();
+                margin: 31px 0 0;
+            
+                .mkd-post-info-bottom-left,
+                .mkd-post-info-bottom-right {
+                    position: relative;
+                    display: inline-block;
+                    width: 50%;
+                    float: left;
+                }
+            
+                .mkd-post-info-bottom-left {
+                
+                    > div {
+                        position: relative;
+                        display: inline-block;
+                        padding-right: 8px;
+                        margin-right: 3px;
+                        color: $default-text-color;
+                    
+                        a {
+                            color: inherit;
+                        
+                            &:hover {
+                                color: $default-heading-color;
+                            }
+
+                            span {
+                                padding-left: 3px;
+                            }
+                        }
+                    
+                        &:after {
+                            content: "/";
+                            position: absolute;
+                            top: 0;
+                            right: -2px;
+                        }
+                    
+                        &:last-child {
+                            padding-right: 0;
+                            margin-right: 0;
+                        
+                            &:after {
+                                content: '';
+                            }
+                        }
+                    }
+                }
+            
+                .mkd-post-info-bottom-right {
+                    text-align: right;
+                
+                    > div {
+                        margin-left: 17px;
+                    
+                        &:first-child {
+                            margin-left: 0;
+                        }
+                    }
+                }
+            }
+
+            &.format-gallery {
+                .owl-nav {
+                    .mkd-prev-icon {
+                        color: $default-text-color;
+                    }
+                }
+            }
+        
+            &.format-link {
+
+                margin-bottom: 110px;
+
+                .mkd-post-additional-content {
+                    margin-bottom: 50px;
+                }
+
+                .mkd-post-content {
+                    margin-bottom: 25px;
+                }
+
+                .mkd-post-info-top {
+                    margin-bottom: 21px;
+                }
+
+                .mkd-post-text-main {
+                    margin-bottom: 0;
+                }
+
+                .mkd-post-text-inner {
+                    margin-bottom: 0;
+                }
+            
+                .mkd-post-text {
+                    padding: 50px 53px;
+                    background-color: #fbfbfb;
+                }
+            
+                .mkd-post-text-main {
+                    @include mkdTableLayout();
+                }
+
+                .mkd-post-info-bottom {
+                    text-align: center;
+                    margin-top: 0;
+                    margin-bottom: 0;
+                }
+            
+                .mkd-post-mark {
+                    position: absolute;
+                    top: -33px;
+                    right: -57px;
+                    width: 50px;
+                
+                    .mkd-link-mark {
+                        font-size: 24px;
+                        color: #c7c7c7;
+                    }
+                }
+            
+                .mkd-post-link-holder {
+                    @include mkdTableCellLayout();
+                    text-align: center;
+                }
+            
+                .mkd-post-title {
+                    margin-bottom: 0;
+                }
+            }
+
+            &.format-quote {
+
+                margin-bottom: 110px;
+
+                .mkd-post-additional-content {
+                    margin-bottom: 50px;
+                }
+
+                .mkd-post-content {
+                    margin-bottom: 40px;
+                }
+
+                .mkd-post-text-main {
+                    margin-bottom: 0;
+                }
+
+                .mkd-post-text-inner {
+                    margin-bottom: 0;
+                }
+
+                .mkd-post-text {
+                    padding: 50px 53px;
+                    padding-bottom: 42px;
+                    padding-top: 42px;
+                    background-color: #fafafa;
+                }
+
+                .mkd-post-text-main {
+                    @include mkdTableLayout();
+                    text-align: center;
+                }
+
+                .mkd-post-info-bottom {
+                    text-align: center;
+                    margin-top: 0;
+                    margin-bottom: 0;
+                }
+
+                .mkd-post-mark {
+                    @include mkdTableCellLayout();
+                    width: 50px;
+                    vertical-align: top;
+                    text-align: left;
+
+                    .mkd-quote-mark {
+                        padding-top: 5px;
+                        font-size: 36px;
+                        color: $first-main-color;
+                    }
+                }
+
+                .mkd-post-link-holder {
+                    @include mkdTableCellLayout();
+                    vertical-align: top;
+                    text-align: left;
+                }
+
+                .mkd-post-title {
+                    margin-bottom: 0;
+                    padding-bottom: 3px;
+                    font-size: 24px;
+                    color: $default-heading-color;
+                    font-weight: bold;
+                    letter-spacing: 0.1em;
+                    line-height: 1.83em;
+                }
+
+                .mkd-quote-author {
+                    font-size: 12px;
+                    color: $default-text-color;
+                    letter-spacing: 0.1em;
+                    font-weight: bold;
+                }
+
+                .mkd-post-author {
+                    display: inline-block;
+                    margin-bottom: 23px;
+                    font-size: 13px;
+                    line-height: 20px;
+                }
+            }
+
+            &.format-gallery {
+                .owl-nav {
+                    .mkd-prev-icon,
+                    .mkd-next-icon {
+                        font-size: 44px;
+                        color: rgba(255,255,255,.7);
+                    }
+                }
+            }
+        }
+    }
+}
+/* ==========================================================================
+   Blog Single Standard style - end
+   ========================================================================== */

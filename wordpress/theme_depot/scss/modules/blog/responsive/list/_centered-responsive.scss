@@ -1,0 +1,35 @@
+/* ==========================================================================
+   Blog List - Centered responsive style - begin
+   ========================================================================== */
+
+.mkd-blog-holder {
+    
+    &.mkd-blog-centered {
+
+        @include laptop-landscape {
+            width: 80%;
+        }
+
+        @include ipad-portrait {
+            width: 100%;
+            
+            article {
+                
+                .mkd-post-info-bottom {
+                    margin-top: 0;
+                    padding: 0;
+                }
+                
+                .mkd-info-bottom-item {
+                    display: block;
+                    width: 100%;
+                    margin: 20px 0;
+                    text-align: center !important;
+                }
+            }
+        }
+    }
+}
+/* ==========================================================================
+   Blog List - Centered responsive style - end
+   ========================================================================== */

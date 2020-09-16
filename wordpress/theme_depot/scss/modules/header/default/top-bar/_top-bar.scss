@@ -1,0 +1,176 @@
+$top-bar-height: 36px;
+
+.mkd-top-bar-background {
+	position: absolute;
+	height: 100px;
+	width: 100%;
+	left: 0;
+	top: 0;
+	background-color: #000;
+	z-index: 101;
+}
+
+.mkd-header-box .mkd-top-bar {
+	background-color: transparent;
+}
+
+.mkd-top-bar {
+	width: 100%;
+	background-color: #000;
+	color: #fff;
+	position: relative;
+	font-weight: 400;
+	height: $top-bar-height;
+	font-size: 12px;
+	z-index: 111;
+	box-sizing: border-box;
+	display: inline-block;
+	vertical-align: middle;
+
+	.mkd-grid {
+		height: 100%;
+
+		.mkd-vertical-align-containers {
+			padding-left: 0;
+			padding-right: 0;
+
+			.mkd-top-bar-in-grid-padding & {
+				padding: 0px 25px;
+			}
+		}
+	}
+
+	.mkd-vertical-align-containers {
+		.mkd-position-left:before,
+		.mkd-position-center:before,
+		.mkd-position-right:before {
+			margin-right: 0px;
+		}
+
+	}
+
+	.mkd-top-bar-widget-area,
+	.mkd-top-bar-widget-area-inner {
+		height: 100%;
+	}
+
+	.mkd-top-bar-widget {
+		display: table;
+		float: left;
+		height: 100%;
+        margin-bottom: 0;
+
+		padding-right: 24px;
+
+		&:last-child {
+			padding-right: 0;
+		}
+
+		&.widget_text {
+			position: relative;
+		}
+
+		&.widget_mkd_search_opener {
+			.mkd-top-bar-widget-inner {
+				padding-top: 5px;
+			}
+		}
+
+		&.widget_nav_menu {
+			padding-top: 0;
+			border-top: none;
+
+			ul li {
+				display: inline-block;
+                padding: 0 22px;
+                vertical-align: middle;
+
+                a {
+                    color: inherit;
+
+                    &:after {
+                        display: none;
+                    }
+                    &:hover {
+                        padding-left: 0;
+                    }
+                }
+			}
+		}
+	}
+
+	.mkd-top-bar-widget-inner {
+		display: table-cell;
+		vertical-align: middle;
+	}
+
+	.mkd-logo-wrapper a {
+		max-height: $top-bar-height;
+	}
+
+    a {
+        color: inherit;
+    }
+}
+
+.mkd-top-bar-light .mkd-top-bar {
+	color: $header-light-color; //Beacause of inline color styles
+
+	.widget:not(.widget_mkd_woocommerce_dropdown_cart) {
+		color: $header-light-color; //Beacause of inline color styles
+
+		p,
+		a,
+		span,
+		i,
+		.widgettitle {
+			color: $header-light-color !important; //Beacause of inline color styles
+		}
+
+	}
+
+	.mkd-shopping-cart-holder .mkd-header-cart {
+		.mkd-cart-icon {
+			color: #fff;
+		}
+
+		.mkd-cart-number {
+			background-color: #fff;
+			color: #9e9e9e;
+		}
+	}
+}
+
+.mkd-top-bar-dark .mkd-top-bar {
+	color: $header-dark-color; //Beacause of inline color styles
+
+	.widget {
+		color: $header-dark-color; //Beacause of inline color styles
+
+		p,
+		a,
+		span,
+		i,
+		.widgettitle {
+			color: $header-dark-color !important; //Beacause of inline color styles
+		}
+
+	}
+}
+
+.mkd-top-bar-gray .mkd-top-bar {
+	color: #777777; //Beacause of inline color styles
+
+	.widget {
+		color: #777777; //Beacause of inline color styles
+
+		p,
+		a,
+		span,
+		i,
+		.widgettitle {
+			color: #777777; //Beacause of inline color styles
+		}
+
+	}
+}

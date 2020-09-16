@@ -1,0 +1,63 @@
+@import "blocks/_logo";
+@import "blocks/_widgets";
+@import "blocks/navigation/_navigation";
+
+.mkd-header-vertical-compact {
+	.mkd-content,
+	footer {
+		padding-left: $vertical-compact-menu-width;
+
+		box-sizing: border-box;
+	}
+
+	.mkd-vertical-menu-area {
+		position: fixed;
+		width: $vertical-compact-menu-width;
+		top: 0;
+		left: 0;
+		background-color: transparent;
+		height: 100%;
+		z-index: 101;
+		-webkit-backface-visibility: hidden;
+		outline: none;
+
+		box-sizing: border-box;
+
+        .mkd-vertical-menu-area-inner{
+            position: relative;
+            height: 100%;
+        }
+	}
+
+	&.admin-bar .mkd-vertical-menu-area {
+		top: 33px;
+	}
+
+	.mkd-vertical-menu-area.mkd-with-scroll {
+		overflow: visible;
+	}
+
+	.mkd-vertical-area-background {
+		position: fixed;
+		width: $vertical-compact-menu-width;
+		height: 100%;
+		background-position: right top;
+		background-repeat: no-repeat;
+		background-color: #fff;
+		background-size: cover;
+		top: 0;
+		left: 0;
+		z-index: 0;
+		opacity: 1;
+
+		@include mkdTransition(opacity 0.5s ease, background-color 0.5s ease);
+	}
+
+    &.mkd-header-vertical-compact-shadow-disable .mkd-vertical-area-background{
+        box-shadow: none;
+    }
+
+    &.mkd-header-vertical-compact-border-disable .mkd-vertical-area-background{
+        border: none;
+    }
+}

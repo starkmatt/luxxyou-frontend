@@ -1,0 +1,53 @@
+/* ==========================================================================
+# Search opener - begin
+========================================================================== */
+
+.mkd-search-opener {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 13px;
+    color: $first-main-color;
+    margin: 0 10px 0 10px;
+
+    &:hover {
+        color: $default-text-color;
+    }
+
+    .mkd-search-opener-wrapper {
+
+        > * {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .mkd-icon-font-awesome,
+        .mkd-icon-font-elegant,
+        .mkd-icon-ion-icon {
+            line-height: inherit;
+        }
+    }
+}
+
+.mkd-light-header .mkd-page-header > div:not(.mkd-sticky-header):not(.fixed) .mkd-search-opener,
+.mkd-light-header .mkd-top-bar .mkd-search-opener {
+    color: $header-light-color !important; //Color can be set inline from widget opener
+
+    &:hover {
+        color: $header-light-hover-color !important;
+    }
+}
+
+.mkd-dark-header .mkd-page-header > div:not(.mkd-sticky-header):not(.fixed) .mkd-search-opener,
+.mkd-dark-header .mkd-top-bar .mkd-search-opener {
+    color: $header-dark-color !important; //Color can be set inline from widget opener
+
+    &:hover {
+        color: $header-dark-hover-color !important;
+    }
+}
+
+/* ==========================================================================
+# Search opener - end
+========================================================================== */

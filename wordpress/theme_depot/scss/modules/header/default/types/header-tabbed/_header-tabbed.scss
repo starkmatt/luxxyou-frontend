@@ -1,0 +1,111 @@
+.mkd-header-tabbed {
+    .mkd-page-header {
+        .mkd-menu-area {
+            height: 70px;
+
+            box-sizing: border-box;
+
+            .mkd-position-left-inner {
+                padding-right: 20px;
+            }
+
+            .mkd-position-center {
+                position: relative;
+                float: left;
+                opacity: 0;
+                @include mkdTransition(opacity 0.3s ease);
+
+                &:before {
+                    content: normal;
+                    margin: 0;
+                }
+            }
+
+            .mkd-position-right{
+
+                &:before {
+                    content: normal;
+                    margin: 0;
+                }
+
+                .mkd-position-right-inner{
+                    height: 100%;
+                }
+            }
+
+            .mkd-vertical-align-containers {
+                .mkd-position-center-inner {
+                    height: 100%;
+                    width: 100%;
+
+                    .mkd-main-menu {
+                        width: 100%;
+                        margin: 0;
+
+                        > ul {
+                            display: table;
+                            table-layout: fixed;
+                            height: 100%;
+                            width: 100%;
+
+                            &:before,
+                            &:after {
+                                content: normal;
+                            }
+
+                            > li {
+
+                                box-sizing: border-box;
+                                display: table-cell;
+                                height: 100%;
+                                text-align: center;
+                                float: none;
+                                border-left: 1px solid rgba(0, 0, 0, 0.1);
+
+                                &:last-child {
+                                    border-right: 1px solid rgba(0, 0, 0, 0.1);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .mkd-header-widget-menu-area,
+            .mkd-position-right-inner > a {
+                display: table;
+                float: left;
+                padding: 0 20px;
+                position: relative;
+                vertical-align: middle;
+                height: 100%;
+                border-right: 1px solid rgba(0, 0, 0, 0.1);
+
+            }
+
+            .mkd-header-widget-menu-area {
+                &:last-child {
+                    padding-right: 0;
+                    border: 0;
+                }
+
+                > div {
+                    display: table-cell;
+                    vertical-align: middle;
+                }
+            }
+
+            .mkd-position-right-inner > a {
+                margin: 0;
+
+                > span {
+                    position: absolute;
+                    top: 50%;
+                    @include mkdTransform(translate(-50%, -50%));
+                }
+            }
+        }
+
+    }
+}
+

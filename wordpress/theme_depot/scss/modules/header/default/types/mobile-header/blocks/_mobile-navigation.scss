@@ -1,0 +1,164 @@
+.mkd-mobile-header {
+
+    .mkd-mobile-nav {
+
+        padding-top: 43%;
+
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+
+            li {
+                position: relative;
+                margin: 0;
+                padding: 0;
+                font-size: 13px;
+                text-transform: uppercase;
+
+                &.current-menu-item > a,
+                &.current-menu-ancestor > a {
+                    color: #fff;
+                }
+
+                &.mkd-opened {
+                    padding-bottom: 10px;
+                }
+
+                &.mkd-opened > a {
+                    padding-bottom: 20px;
+                }
+
+                a, h6 { //h6 is here because of no link option in navigation
+                    position: relative;
+                    display: inline-block;
+                    padding: 11px 0;
+                    margin: 0;
+                    color: #a5a5a5;
+                    font-size: 23px;
+                    font-weight: 400;
+
+                    &:hover {
+                        color: #fff;
+                    }
+                }
+            }
+
+            //dropdowns
+            ul {
+                display: none;
+
+                li {
+
+                    &.current-menu-ancestor > a,
+                    &.current-menu-item > a {
+                        color: #fff;
+                    }
+
+                    .mobile_arrow {
+                        top: 1px;
+                    }
+
+                    &.mkd-opened > a {
+                        padding-bottom: 10px;
+                    }
+
+                    a, h6 {
+                        font-size: 16px;
+                        line-height: 24px;
+                        text-transform: initial;
+                        padding: 3px 0;
+                    }
+                }
+
+                ul {
+                    li {
+                        a {
+                            font-size: 15px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .mkd-grid > ul {
+
+            > li {
+
+                > a,
+                > h6 {
+                    padding-left: 4px;
+                    font-size: 13px;
+                }
+
+                &.mkd-active-item > a {
+                    opacity: .8;
+                }
+
+                &.mkd-active-item > .mobile_arrow > .mkd-sub-arrow {
+                    @include mkdTransform(rotate(90deg));
+                }
+            }
+        }
+
+        li.current-menu-ancestor > .mobile_arrow,
+        li.current-menu-item .mobile_arrow {
+            color: #fff;
+        }
+
+        .mobile_arrow {
+            $mobile-arrow-height: 30px;
+
+            position: relative;
+            right: 0;
+            top: -2px;
+            width: 50px;
+            height: $mobile-arrow-height;
+            line-height: $mobile-arrow-height;
+            font-size: 14px;
+            text-align: right;
+            color: #a5a5a5;
+            padding-left: 3px;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            .mkd-sub-arrow {
+                @include mkdTransition(transform 0.2s ease-in-out);
+                display: inline-block;
+            }
+
+            //@TODO remove this line of code when new headers are enabled
+            .arrow_triangle-down {
+                display: none; //temporarily
+            }
+        }
+
+        li.mkd-opened > .mobile_arrow > .mkd-sub-arrow {
+            @include mkdTransform(rotate(90deg));
+        }
+
+        & > ul > li:last-child > a,
+        & > .mkd-grid > ul > li:last-child > a {
+            border-bottom: none;
+        }
+    }
+}
+
+@include ipad-portrait {
+    .mkd-mobile-header {
+        .mkd-mobile-nav {
+            padding-top: 20%;
+        }
+    }
+}
+
+
+@include phone-portrait {
+    .mkd-mobile-header {
+        .mkd-mobile-nav {
+            padding-top: 15%;
+        }
+    }
+}

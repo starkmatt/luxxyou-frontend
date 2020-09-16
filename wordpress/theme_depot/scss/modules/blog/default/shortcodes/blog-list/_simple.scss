@@ -1,0 +1,21 @@
+.mkd-blog-list-holder {
+    &.mkd-bl-simple {
+
+        .mkd-post-title {
+            margin: 0;
+        }
+
+        .mkd-post-image {
+            display: table-cell;
+            vertical-align: top;
+            width: auto;
+        }
+
+        .mkd-bli-content {
+            display: table-cell;
+            vertical-align: top;
+            width: auto;
+            padding-left: 20px;
+        }
+    }
+}

@@ -1,0 +1,34 @@
+.mkd-header-standard {
+	.mkd-menu-area {
+		background-color: #fff;
+		box-sizing: border-box;
+
+        .mkd-position-center-inner {
+            height: 100%;
+        }
+
+        .mkd-position-right-inner {
+            height: 100%;
+
+            .mkd-main-menu-widget-area {
+                position: relative;
+                display: inline-block;
+                vertical-align: middle;
+                height: 100%;
+
+                .mkd-main-menu-widget-area-inner {
+                    height: 100%;
+                }
+            }
+        }
+	}
+
+//    &.mkd-header-standard-right-position{
+//        .mkd-menu-area {
+//
+//            .mkd-position-right-inner {
+//                height: 100%;
+//            }
+//        }
+//    }
+}

@@ -1,0 +1,155 @@
+/* ==========================================================================
+   Blog List - Standard Date on Side style - begin
+   ========================================================================== */
+
+.mkd-blog-holder {
+	
+    &.mkd-blog-standard-date-on-side {
+	    
+        article {
+            padding-bottom: 20px;
+            margin-bottom: 32px;
+
+            &.mkd-post-has-media {
+                .mkd-post-heading {
+                    margin-bottom: 30px;
+                }
+            }
+
+            .mkd-post-text {
+                display: table;
+                table-layout: fixed;
+            }
+
+            .mkd-post-date-inner {
+                display: table-cell;
+                width: 75px;
+                height: 100%;
+                vertical-align: top;
+                line-height: 0;
+
+                .mkd-post-date-day {
+	                display: inline-block;
+	                width: 100%;
+	                height: 40px;
+	                font-size: 24px;
+	                line-height: 40px;
+	                color: $first-main-color;
+	                background-color: #f9f9f9;
+	                border-radius: 3px 3px 0 0;
+	                text-align: center;
+                }
+
+                .mkd-post-date-month {
+	                display: inline-block;
+	                width: 100%;
+	                height: 26px;
+	                font-size: 12px;
+	                line-height: 26px;
+	                color: $first-main-color;
+	                background-color: #e9e9e9;
+	                border-radius: 3px 3px 0 0;
+	                text-align: center;
+                }
+            }
+
+            .mkd-post-text-inner {
+                display: table-cell;
+                width: 100%;
+                height: 100%;
+                padding-left: 20px;
+            }
+
+            .mkd-post-title {
+                margin: 0 0 15px;
+	            
+                a {
+	                
+                    &:hover {
+                        color: $first-main-color;
+                    }
+                }
+            }
+
+            .mkd-post-excerpt {
+                margin: 0 0 20px;
+            }
+
+            .mkd-post-info {
+                margin-bottom: 12px;
+
+                > div {
+                    display: inline-block;
+                    position: relative;
+                    padding-right: 15px;
+                    color: #bbbbbb;
+                    text-transform: capitalize;
+	                
+	                &:after {
+		                content: "/";
+		                position: absolute;
+		                right: 5px;
+		                top: 0;
+	                }
+	                
+	                &:last-child {
+		                
+		                &:after {
+			                content: '';
+		                }
+	                }
+
+                    a {
+                        color: $default-text-color;
+	                    
+                        &:hover {
+                            color: $first-main-color;
+                        }
+                    }
+                }
+            }
+
+            &.format-audio {
+                &.mkd-post-no-media.has-post-thumbnail {
+                    .mkd-post-heading {
+                        margin-bottom: 30px;
+                    }
+                }
+            }
+
+            &.format-quote,
+            &.format-link {
+                
+                .mkd-post-text{
+                    padding: 34px 31px 38px;
+                    background-color: #f9f9f9;
+                    box-sizing: border-box;
+                }
+                
+                .mkd-post-info {
+                    margin-bottom: 19px;
+                }
+                
+                .mkd-post-title {
+                    font-size: 22px;
+                    margin: 0 0 20px;
+                }
+
+                .mkd-post-date-inner .mkd-post-date-day {
+                    background-color: #fff;
+                }
+            }
+
+            &.format-quote {
+                
+                .mkd-quote-author {
+                    font-size: 16px;
+                    color: $first-main-color;
+                }
+            }
+        }
+    }
+}
+/* ==========================================================================
+   Blog List - Standard Date on Side style - end
+   ========================================================================== */

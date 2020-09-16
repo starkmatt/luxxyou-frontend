@@ -1,0 +1,56 @@
+/* ==========================================================================
+   Blog List - Split Columns responsive style - begin
+   ========================================================================== */
+
+.mkd-blog-holder {
+    
+    &.mkd-blog-split-column {
+        
+        article {
+            
+            @include ipad-landscape {
+                
+                .mkd-post-content {
+
+                    .mkd-post-heading,
+                    .mkd-post-text {
+                        display: block;
+                        width: 100%;
+                    }
+                    .mkd-post-text-inner {
+                        padding-left: 0;
+                    }
+                }
+                &.mkd-post-has-media {
+                    .mkd-post-heading {
+                        margin-bottom: 30px;
+                    }
+                }
+                &.format-audio {
+                    &.mkd-post-no-media.has-post-thumbnail {
+                        .mkd-post-heading {
+                            display: block;
+                            margin-bottom: 30px;
+                        }
+                        .mkd-post-text {
+                            display: block;
+                            width: 100%;
+                            .mkd-post-text-inner {
+                                padding-left: 0;
+                            }
+                        }
+                    }
+                    &.mkd-post-has-media:not(.has-post-thumbnail) {
+                        .mkd-post-heading {
+                            min-height: 38px;
+                            margin-bottom: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* ==========================================================================
+   Blog List - Split Columns style - end
+   ========================================================================== */

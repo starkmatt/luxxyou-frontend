@@ -1,0 +1,129 @@
+/* ==========================================================================
+   Blog List shortcode Standard - begin
+   ========================================================================== */
+
+.mkd-blog-list-holder {
+    &.mkd-bl-standard {
+        &:not(.mkd-bl-one-column) {
+
+            .mkd-bl-item {
+                float: left;
+            }
+        }
+
+        $columns_number: ('two', 'three', 'four', 'five');
+
+        @for $i from 0 to length($columns_number) {
+            &.mkd-bl-#{nth($columns_number,$i+1)}-columns {
+
+                .mkd-bl-item {
+                    width: 100% / ($i+2);
+                }
+
+                @if ($i > 1) { // set different break point for four and five columns
+                    @media only screen and (min-width: $laptop-landscape-plus-pixel) {
+
+                        .mkd-bl-item {
+
+                            &:nth-child(#{$i+2}n+1) {
+                                clear: both;
+                            }
+                        }
+                    }
+                } @else {
+                    @media only screen and (min-width: $ipad-landscape-plus-pixel) {
+
+                        .mkd-bl-item {
+
+                            &:nth-child(#{$i+2}n+1) {
+                                clear: both;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .mkd-post-title {
+            margin: 0;
+            margin-top: -6px;
+        }
+
+        .mkd-bli-excerpt {
+            margin-top: -37px;
+            .mkd-post-excerpt-holder {
+                p {
+                    margin-top: 26px;
+                    color: $default-text-color;
+                    font-weight: 500;
+                }
+            }
+
+            .mkd-post-read-more-button {
+                a {
+                    margin-top: 11px;
+                    span {
+                        color: #323232;
+                        font-weight: 700;
+                        letter-spacing: 0.15em;
+                    }
+
+                    i {
+                        color: $first-main-color;
+                        font-size: 10px;
+                    }
+                }
+            }
+        }
+
+        .mkd-post-info-date {
+            margin-top: 25px;
+            a {
+                font-size: 12px;
+                letter-spacing: 0.1em;
+                line-height: 47px;
+                font-weight: 700;
+                color: $default-text-color;
+            }
+        }
+
+        .mkd-bli-info {
+            @include mkdRelativeHolderLayout();
+            margin: 0;
+            clear: both;
+
+            > div {
+                position: relative;
+                display: inline-block;
+                vertical-align: top;
+                float: left;
+                padding: 0 13px 5px 0;
+
+                &:after {
+                    position: absolute;
+                    top: 0;
+                    right: 4px;
+                    content: '/';
+                }
+
+                &:last-child {
+                    padding: 0 0 5px;
+
+                    &:after {
+                        display: none;
+                    }
+                }
+
+                a {
+                    span {
+                        padding-left: 3px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+   Blog List shortcode Standard - end
+   ========================================================================== */

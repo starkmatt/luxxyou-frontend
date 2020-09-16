@@ -1,0 +1,132 @@
+/* ==========================================================================
+   Blog List - Centered style - begin
+   ========================================================================== */
+
+.mkd-blog-holder {
+    
+    &.mkd-blog-centered {
+	    display: block;
+	    width: 66%;
+	    margin: 0 auto;
+	    text-align: center;
+
+        article {
+            margin-bottom: 30px;
+            padding-bottom: 0;
+            border-bottom: 1px solid #ededed;
+
+            .mkd-post-info {
+                margin-bottom: 20px;
+	            
+                > div {
+                    width: 100%;
+                }
+            }
+
+            &.format-link {
+                position: relative;
+	            margin-bottom: 25px;
+	            padding: 35px 45px 50px;
+	            background-color: #f6f6f6;
+	            overflow: hidden;
+	
+	            .mkd-post-text:after {
+		            position: absolute;
+		            top: -25px;
+	                left: 50%;
+	                right: auto;
+	                content: "\f0c1";
+	                font-family: 'FontAwesome';
+	                font-size: 235px;
+		            line-height: 1em;
+		            color: #ececec;
+		            z-index: 10;
+		            @include mkdTransform(translateX(-50%) rotateY(180deg));
+                }
+	            
+                .mkd-post-text-inner {
+                    position: relative;
+                    z-index: 20;
+                }
+            }
+	        
+            &.format-quote {
+                position: relative;
+	            margin-bottom: 25px;
+	            padding: 35px 45px;
+	            background-color: #f6f6f6;
+	            overflow: hidden;
+                z-index: 20;
+	            
+                .mkd-post-text:after {
+	                position: absolute;
+	                top: -318px;
+	                right: auto;
+	                left: 50%;
+	                content: '\201C';
+	                font-family: 'Georgia', sans-serif;
+	                font-size: 505px;
+	                line-height: 1em;
+	                color: #ececec;
+	                z-index: 10;
+                    @include mkdTransform(rotateX(180deg) rotateY(180deg) translateX(50%));
+                }
+	            
+                .mkd-post-text-inner {
+                    position: relative;
+                    z-index: 20;
+                }
+            }
+
+            &.format-audio {
+                &.mkd-post-no-media.has-post-thumbnail {
+                    .mkd-post-heading {
+                        margin-bottom: 30px;
+                    }
+                }
+            }
+
+            &.mkd-post-has-media {
+                .mkd-post-heading {
+                    margin-bottom: 30px;
+                }
+            }
+
+            .mkd-post-info {
+                padding: 0;
+            }
+	        
+            .mkd-post-title {
+                margin: 0;
+            }
+	        
+            .mkd-post-info-bottom {
+                display: table;
+                table-layout: fixed;
+                width: 100%;
+                height: 100%;
+                margin-top: 40px;
+                padding-bottom: 40px;
+                border-bottom: 0;
+            }
+
+            .mkd-info-bottom-item {
+                display: table-cell;
+                width: 33.3%;
+                height: 100%;
+                vertical-align: middle;
+
+                &:first-child {
+                    text-align: left;
+                }
+	            
+                &:last-child {
+                    text-align: right;
+                }
+            }
+        }
+    }
+}
+/* ==========================================================================
+   Blog List - Centered style - end
+   ========================================================================== */

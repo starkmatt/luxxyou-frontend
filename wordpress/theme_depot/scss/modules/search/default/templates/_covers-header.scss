@@ -1,0 +1,115 @@
+/* ==========================================================================
+# Search covers header - start
+========================================================================== */
+
+.mkd-search-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: none;
+    color: #fff;
+    background-color: #111;
+    z-index: 115;
+    
+    .mkd-form-holder-outer {
+        display: table;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .mkd-form-holder {
+        position: relative;
+        display: table-cell;
+        vertical-align: middle;
+        padding: 0 45px;
+    }
+    
+    .mkd-form-holder-inner {
+        @include mkdRelativeHolderLayout();
+    }
+    
+    .mkd-container-inner {
+        
+        .mkd-form-holder {
+            padding: 0;
+        }
+        
+        .mkd-search-close {
+            right: 0;
+        }
+    }
+    
+    input {
+        display: inline-block;
+        vertical-align: middle;
+        width: 90%;
+        margin: 0;
+        padding: 0;
+        float: left;
+        font-family: inherit;
+        color: inherit;
+        font-size: inherit;
+        font-weight: inherit;
+        background-color: transparent;
+        border: 0;
+        box-shadow: none;
+        outline: none;
+        outline-offset: 0;
+        border-radius: 0;
+        
+        @include mkdPlaceholder {
+            color: $default-text-color;
+        }
+    }
+    
+    input[type="submit"] {
+        border: 0 none;
+        clip: rect(0px,0px,0px,0px);
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+        visibility: hidden;
+    }
+    
+    .mkd-search-close {
+        position: absolute;
+        right: 24px;
+        top: 50%;
+        font-size: 34px;
+        line-height: 1em;
+        @include mkdTransform(translateY(-50%));
+    }
+    
+    .mkd-search-close {
+        
+        a {
+            color: $default-text-color;
+            display: inline-block;
+            vertical-align: middle;
+            
+            * {
+                display: block;
+                line-height: inherit;
+            }
+            
+            &:hover {
+                color: $first-main-color;
+            }
+        }
+    }
+}
+
+.mkd-search-cover.disabled {
+    
+    input,
+    input:focus {
+        font-weight: normal;
+    }
+}
+
+/* ==========================================================================
+# Search covers header - end
+========================================================================== */

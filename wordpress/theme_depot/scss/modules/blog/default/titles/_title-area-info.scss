@@ -1,0 +1,40 @@
+/* ==========================================================================
+   Title Area Info style - begin
+   ========================================================================= */
+.mkd-title {
+    &.mkd-blog-single-title-area-info {
+        text-align: center;
+        .mkd-post-info-date {
+            a {
+                color: #fff;
+                font-weight: 700;
+                letter-spacing: 0.1em;
+            }
+        }
+        .entry-title {
+            color: #fff;
+            font-size: 30px;
+            letter-spacing: 0.1em;
+            margin-top: 3px;
+            margin-bottom: 5px;
+        }
+
+        .mkd-post-info-author {
+            color: #fff;
+            letter-spacing: 0.1em;
+            font-weight: 700;
+            text-transform: uppercase;
+            a {
+                letter-spacing: 0.1em;
+                font-weight: 700;
+                text-transform: uppercase;
+                color: #fff;
+            }
+        }
+
+    }
+}
+
+/* ==========================================================================
+   Title Area Info style - end
+   ========================================================================= */

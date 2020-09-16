@@ -1,0 +1,124 @@
+/* Related posts styles - begin
+	====================================================================== */
+
+.mkd-related-posts-holder {
+    @include mkdRelativeHolderLayout();
+    padding: 0;
+    box-sizing: border-box;
+
+    .mkd-related-posts-holder-inner {
+        padding: 46px 0 26px;
+    }
+
+    .mkd-related-posts-title {
+        margin: 0 0 40px;
+
+        > * {
+            margin: 0;
+        }
+    }
+
+    .mkd-related-posts-inner {
+        margin: 0 -10px;
+    }
+
+    .mkd-related-post {
+        position: relative;
+        display: inline-block;
+        float: left;
+        width: 25%;
+        margin: 0 0 20px;
+        padding: 0 10px;
+        box-sizing: border-box;
+    
+        .mkd-content-has-sidebar & {
+            widtH: 33.33333333333333%;
+        }
+    
+        .touch & {
+            cursor: pointer;
+        }
+    
+        &:hover {
+        
+            .mkd-related-post-image a:after {
+                opacity: 1;
+            }
+        }
+    
+        .mkd-related-post-image {
+            @include mkdRelativeHolderLayout();
+            overflow: hidden;
+        
+            a {
+                position: relative;
+                display: block;
+            
+                &:after {
+                    @include mkdAbsoluteHolderLayout();
+                    content: '';
+                    opacity: 0;
+                    background-color: rgba($default-heading-color, 0.2);
+                    @include mkdTransition(opacity 0.3s ease);
+                }
+            }
+        
+            img {
+                display: block;
+            }
+        }
+    
+        .mkd-post-title {
+            margin: 5px 0 0;
+        }
+    
+        .mkd-post-info {
+            @include mkdRelativeHolderLayout();
+            margin: 19px 0 0;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 0.1em;
+
+            > div {
+                position: relative;
+                display: inline-block;
+                vertical-align: top;
+                float: left;
+                padding: 0 13px 0 0;
+                color: inherit;
+
+                &:after {
+                    position: absolute;
+                    top: 0;
+                    right: 4px;
+                    content: '/';
+                }
+
+                &:last-child {
+                    padding: 0;
+
+                    &:after {
+                        display: none;
+                    }
+                }
+
+                &.mkd-post-info-author {
+
+                    .mkd-post-info-author-text {
+                        margin: 0 3px 0 0;
+                    }
+                }
+
+                a {
+                    color: inherit;
+                    line-height: inherit;
+                    font-size: inherit;
+                    font-weight: inherit;
+                }
+            }
+        }
+    }
+}
+
+/* Related posts styles - end
+	====================================================================== */

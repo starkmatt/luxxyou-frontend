@@ -1,0 +1,223 @@
+/* ==========================================================================
+# Side area style - start
+========================================================================== */
+
+/* Side area general style - start
+========================================================================== */
+
+.mkd-light-header .mkd-page-header > div:not(.mkd-sticky-header):not(.fixed) .mkd-side-menu-button-opener,
+.mkd-light-header .mkd-top-bar .mkd-side-menu-button-opener {
+	color: $header-light-color !important; //Color can be set inline from widget opener;
+	
+	&.opened,
+	&:hover {
+		color: $default-text-color !important; //Color can be set inline from widget opener;
+	}
+}
+
+.mkd-dark-header .mkd-page-header > div:not(.mkd-sticky-header):not(.fixed) .mkd-side-menu-button-opener,
+.mkd-dark-header .mkd-top-bar .mkd-side-menu-button-opener {
+	color: $header-dark-color !important; //Color can be set inline from widget opener;
+	
+	&.opened,
+	&:hover {
+		color: $default-text-color !important; //Color can be set inline from widget opener;
+	}
+}
+
+.mkd-side-menu-button-opener {
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0 10px;
+	
+	.mkd-side-menu-title {
+		position: relative;
+		display: inline-block;
+		vertical-align: middle;
+		margin: 0 8px 0 0;
+		color: currentColor;
+	}
+	
+	.mkd-side-menu-lines {
+		position: relative;
+		display: inline-block;
+		vertical-align: middle;
+		width: 16px;
+		height: 10px;
+		top: -1px;
+		
+		.mkd-side-menu-line {
+			position: absolute;
+			left: 0;
+			height: 1px;
+			width: 100%;
+			background-color: currentColor;
+			border-radius: 12px;
+			@include mkdTransition(background-color .2s ease-out);
+			
+			&.mkd-line-1 {
+				top: 0;
+				outline: transparent solid 1px;
+			}
+			
+			&.mkd-line-2 {
+				top: 50%;
+				outline: transparent solid 1px;
+			}
+			
+			&.mkd-line-3 {
+				top: 100%;
+				outline: transparent solid 1px;
+			}
+		}
+	}
+	
+	&.opened,
+	&:hover {
+		color: $default-text-color;
+	}
+}
+
+.mkd-side-menu {
+    position: fixed;
+    top: 0;
+	right: -605px;
+	width: 605px;
+    height: 100%;
+    min-height: 100%;
+	padding: 66px 62px 121px;
+    background-color: #111;
+    overflow: hidden;
+    visibility: hidden;
+    z-index: 9999;
+    -webkit-backface-visibility: hidden;
+    box-sizing: border-box;
+	box-shadow: -3px 0 3px rgba(0, 0, 0, 0.04);
+    @include mkdTransition(all .6s cubic-bezier(.77,0,.175,1));
+	text-align: center;
+
+	.mkd-side-area-inner {
+		height: 100%;
+		min-height: 100%;
+		overflow: hidden;
+		outline: none;
+	}
+
+	div.widget_mkd_instagram_widget {
+		padding: 0 50px;
+		margin-top: -8px;
+	}
+
+	div.widget_text {
+		.mkd-widget-title-holder {
+			.mkd-widget-title {
+				color: #fff;
+				letter-spacing: 0.1em;
+				margin-top: 28px;
+			}
+		}
+
+		.textwidget {
+			font-size: 24px;
+			color: $default-text-color;
+			font-weight: 300;
+			line-height: 36px;
+
+			p {
+				font-size: 12px;
+				color: #a5a5a5;
+				letter-spacing: 0.1em;
+				font-weight: bold;
+			}
+		}
+	}
+
+	.mkd-side-area-bottom {
+		.widget {
+			margin-bottom: -3px;
+			margin-top: -15px;
+		}
+
+		.mkd-social-icon-widget-holder {
+			font-size: 15px;
+			color:	#fff;
+		}
+	}
+
+    .mkd-close-side-menu-holder {
+        position: absolute;
+	    top: 38px;
+	    right: 38px;
+        z-index: 1000;
+    }
+
+	a.mkd-close-side-menu {
+		display: block;
+		color: #fff;
+		font-size: 24px;
+		z-index: 1000;
+
+		&:hover {
+			color: $default-text-color;
+		}
+
+		span {
+			display: block;
+			line-height: inherit;
+
+			&:before {
+				display: block;
+				line-height: inherit;
+			}
+		}
+	}
+}
+
+.admin-bar .mkd-side-menu .mkd-close-side-menu-holder {
+    top: 32px;
+}
+
+/* Side area general style - end
+========================================================================== */
+
+/* Side area slides over content style - start
+========================================================================== */
+
+.mkd-side-menu-slide-from-right {
+
+    .mkd-wrapper {
+
+        .mkd-cover {
+            z-index: -1;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            opacity: 0;
+        }
+    }
+}
+
+.mkd-side-menu-slide-from-right.mkd-right-side-menu-opened {
+
+    .mkd-wrapper {
+        .mkd-cover {
+            z-index: 3000;
+        }
+    }
+
+    .mkd-side-menu {
+        right: 0;
+        visibility: visible;
+    }
+}
+
+/* Side area slides over content style - end
+========================================================================== */
+
+/* ==========================================================================
+# Side area style - end
+========================================================================== */

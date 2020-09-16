@@ -1,0 +1,19 @@
+@include ipad-portrait {
+    
+    .mkd-related-posts-holder {
+        
+        .mkd-related-post {
+            width: 50% !important;
+        }
+    }
+}
+
+@include phone-portrait {
+    
+    .mkd-related-posts-holder {
+        
+        .mkd-related-post {
+            width: 100% !important;
+        }
+    }
+}

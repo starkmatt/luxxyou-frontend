@@ -1,0 +1,372 @@
+$logo-area-height: 96px;
+$menu-area-height: 96px;
+$sticky-header-height: 60px;
+
+.mkd-page-header {
+    @include mkdRelativeHolderLayout();
+    margin: 0;
+    padding: 0;
+    z-index: 110;
+    box-sizing: border-box;
+
+    /* ==========================================================================
+    #General header layout - start
+    ========================================================================== */
+    a img {
+        display: block;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    .mkd-grid {
+        height: 100%;
+
+        .mkd-vertical-align-containers {
+            padding: 0;
+            @include mkdTransition(background-color 0.3s ease);
+        }
+    }
+
+    /* ==========================================================================
+    #General header layout - end
+    ========================================================================== */
+
+    /* ==========================================================================
+    #Logo area styles - start
+    ========================================================================== */
+    .mkd-logo-area {
+        height: $logo-area-height;
+        overflow: hidden;
+        position: relative;
+        background-color: #fff;
+
+        .mkd-logo-wrapper a {
+            max-height: $logo-area-height;
+        }
+    }
+    /* ==========================================================================
+    #Logo area styles - end
+    ========================================================================== */
+
+    /* ==========================================================================
+    #Menu area styles - start
+    ========================================================================== */
+    .mkd-menu-area {
+        position: relative;
+        height: $menu-area-height;
+        box-sizing: border-box;
+        background-color: #fff;
+
+        .mkd-boxed & {
+            padding: 0;
+        }
+
+        .mkd-logo-wrapper a {
+            max-height: $menu-area-height;
+        }
+
+        .widget {
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0;
+        }
+
+        .mkd-main-menu-widget-area-inner{
+            margin: 0 -10px 0 0;
+        }
+    }
+    /* ==========================================================================
+    #Menu area styles - end
+    ========================================================================== */
+
+    /* ==========================================================================
+    #Sticky header styles - start
+    ========================================================================== */
+    .mkd-sticky-header {
+        height: $sticky-header-height;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        @include mkdTransform(translateY(-100%));
+        -webkit-transition: -webkit-transform 0.6s ease;
+        -moz-transition: -moz-transform 0.6s ease;
+        transition: transform .6s ease;
+        -webkit-backface-visibility: hidden;
+
+        .mkd-grid {
+            height: 100% !important; //override settings for other instances of this div
+        }
+
+        &.header-appear {
+            transform: translateY(0%);
+        }
+
+        .mkd-sticky-holder {
+            height: 100%;
+            position: relative;
+            z-index: 2;
+            background-color: #fff;
+            border-bottom: 1px solid $default-border-color;
+            box-sizing: border-box;
+
+            .mkd-vertical-align-containers {
+                padding: 0 40px;
+            }
+        }
+
+        .admin-bar &.header-appear {
+            top: 32px;
+        }
+
+        .mkd-sticky-holder .mkd-logo-wrapper a {
+            max-height: $sticky-header-height;
+        }
+
+        .mkd-position-center-inner {
+            height: 100%;
+        }
+
+        .mkd-sticky-right {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .mkd-position-right-inner {
+
+            .mkd-main-menu-widget-area {
+                position: relative;
+                display: inline-block;
+                vertical-align: middle;
+
+                &:only-child {
+                    display: table;
+                    height: 100%;
+
+                    .mkd-main-menu-widget-area-inner {
+                        display: table-cell;
+                        vertical-align: middle;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+
+
+    }
+    /* ==========================================================================
+    #Sticky header styles - end
+    ========================================================================== */
+
+    /* ==========================================================================
+    #Fixed header styles - start
+    ========================================================================== */
+    .mkd-fixed-wrapper.fixed {
+        width: 100%;
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        -webkit-backface-visibility: hidden;
+
+        .admin-bar & {
+            margin-top: 32px;
+        }
+    }
+
+    /* ==========================================================================
+    #Fixed header - end
+    ========================================================================== */
+}
+
+.mkd-header-logo-area-in-grid-padding .mkd-page-header .mkd-logo-area .mkd-vertical-align-containers,
+.mkd-header-menu-area-in-grid-padding .mkd-page-header .mkd-menu-area .mkd-vertical-align-containers {
+    padding: 0px 25px;
+}
+
+.mkd-menu-area-shadow-disable .mkd-page-header .mkd-menu-area,
+.mkd-menu-area-in-grid-shadow-disable .mkd-page-header .mkd-menu-area .mkd-grid .mkd-vertical-align-containers{
+    box-shadow: none;
+}
+
+.mkd-logo-area-border-disable .mkd-page-header .mkd-logo-area,
+.mkd-logo-area-in-grid-border-disable .mkd-page-header .mkd-logo-area .mkd-grid .mkd-vertical-align-containers,
+.mkd-menu-area-border-disable .mkd-page-header .mkd-menu-area,
+.mkd-menu-area-in-grid-border-disable .mkd-page-header .mkd-menu-area .mkd-grid .mkd-vertical-align-containers{
+    border: none;
+}
+
+.mkd-header-vertical-shadow-disable .mkd-vertical-area-background{
+    box-shadow: none;
+}
+
+.mkd-header-vertical-border-disable .mkd-vertical-area-background{
+    border: none;
+}
+
+/* ==========================================================================
+#Light header - begin
+========================================================================== */
+
+.mkd-light-header {
+
+    .mkd-page-header > div:not(.fixed):not(.mkd-sticky-header) {
+
+        .mkd-logo-wrapper {
+
+            .mkd-light-logo {
+                opacity: 1;
+            }
+
+            .mkd-normal-logo,
+            .mkd-dark-logo {
+                opacity: 0;
+            }
+        }
+
+        .mkd-menu-area {
+            color: $header-light-color !important; //Beacause of inline color styles
+
+            .widget {
+                color: $header-light-color !important; //Beacause of inline color styles
+
+                p,
+                a,
+                span,
+                i,
+                .widgettitle {
+                    color: $header-light-color !important; //Beacause of inline color styles
+                }
+
+                a:hover {
+                    color: $header-light-hover-color !important; //Beacause of inline color styles
+                }
+            }
+        }
+
+        &.mkd-menu-area {
+            color: $header-light-color !important; //Beacause of inline color styles
+
+            .widget {
+                color: $header-light-color !important; //Beacause of inline color styles
+
+                p,
+                a,
+                span,
+                i,
+                .widgettitle {
+                    color: $header-light-color !important; //Beacause of inline color styles
+                }
+
+                a:hover {
+                    color: $header-light-hover-color !important; //Beacause of inline color styles
+                }
+            }
+        }
+    }
+
+    .mkd-vertical-menu-area {
+
+        .mkd-logo-wrapper {
+
+            .mkd-light-logo {
+                opacity: 1;
+            }
+
+            .mkd-normal-logo,
+            .mkd-dark-logo {
+                opacity: 0;
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+#Light header - end
+========================================================================== */
+
+/* ==========================================================================
+#Dark header - begin
+========================================================================== */
+
+.mkd-dark-header {
+
+    .mkd-page-header {
+
+        > div:not(.fixed):not(.mkd-sticky-header) {
+
+            .mkd-logo-wrapper {
+
+                .mkd-dark-logo {
+                    opacity: 1;
+                }
+
+                .mkd-normal-logo,
+                .mkd-light-logo {
+                    opacity: 0;
+                }
+            }
+
+            .mkd-menu-area {
+                color: $header-dark-color !important; //Because of inline color styles
+
+                .widget {
+                    color: $header-dark-color !important; //Beacause of inline color styles
+
+                    p,
+                    a,
+                    span,
+                    i,
+                    .widgettitle {
+                        color: $header-dark-color !important; //Beacause of inline color styles
+                    }
+
+                    a:hover {
+                        color: $header-dark-hover-color !important; //Beacause of inline color styles
+                    }
+                }
+            }
+
+            &.mkd-menu-area {
+                color: $header-dark-color !important; //Because of inline color styles
+
+                .widget {
+                    color: $header-dark-color !important; //Beacause of inline color styles
+
+                    p,
+                    a,
+                    span,
+                    i,
+                    .widgettitle {
+                        color: $header-dark-color !important; //Beacause of inline color styles
+                    }
+
+                    a:hover {
+                        color: $header-dark-hover-color !important; //Beacause of inline color styles
+                    }
+                }
+            }
+        }
+    }
+
+    .mkd-vertical-menu-area {
+
+        .mkd-logo-wrapper {
+
+            .mkd-dark-logo {
+                opacity: 1;
+            }
+
+            .mkd-normal-logo,
+            .mkd-light-logo {
+                opacity: 0;
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+#Dark header - end
+========================================================================== */

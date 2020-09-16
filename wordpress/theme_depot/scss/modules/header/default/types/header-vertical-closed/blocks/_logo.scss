@@ -1,0 +1,21 @@
+.mkd-header-vertical-closed {
+
+    .mkd-logo-wrapper {
+        @include mkdRelativeHolderLayout();
+        z-index: 100;
+
+        a {
+            display: block;
+            position: relative;
+            height: 100%;
+        }
+
+        img {
+            display: block;
+            height: auto;
+            max-height: 100%;
+
+            @include mkdTransition(opacity 0.3s ease);
+        }
+    }
+}

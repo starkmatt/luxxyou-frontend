@@ -1,0 +1,110 @@
+.mkd-blog-list-holder {
+    &.mkd-bl-masonry {
+
+        transition: none !important;
+        overflow: visible !important;
+
+        .mkd-blog-list {
+            opacity: 0;
+            @include mkdTransition(opacity .2s ease-out);
+        }
+
+        .mkd-bl-item {
+            vertical-align: top;
+            z-index: 100;
+        }
+
+        .mkd-bl-item,
+        .mkd-bl-grid-sizer {
+            width: 100%;
+        }
+
+        .mkd-bl-grid-gutter {
+            width: 0;
+        }
+
+        $masonry_columns_number: ('two', 'three', 'four', 'five');
+
+        @for $i from 0 to length($masonry_columns_number) {
+            &.mkd-bl-#{nth($masonry_columns_number,$i+1)}-columns {
+                $column_width: 100%/($i+2);
+
+                .mkd-bl-item,
+                .mkd-bl-grid-sizer {
+                    width: $column_width;
+                }
+            }
+        }
+
+        .mkd-post-title {
+            margin: -6px 0 -5px;
+        }
+
+        .mkd-post-info-date {
+            margin-top: 26px;
+            a {
+                font-size: 12px;
+                letter-spacing: 0.1em;
+                line-height: 47px;
+                font-weight: 700;
+                color: $default-text-color;
+            }
+        }
+
+        .mkd-post-excerpt-holder {
+            @include mkdRelativeHolderLayout();
+            margin: 0 0 20px;
+            margin-top: -19px;
+        }
+
+        .mkd-post-read-more-button {
+            a {
+                margin-top: -15px;
+                span {
+                    color: #323232;
+                    font-weight: 700;
+                    letter-spacing: 0.15em;
+                }
+
+                i {
+                    color: $first-main-color;
+                    font-size: 11px;
+                }
+            }
+        }
+
+        .mkd-bli-info {
+            @include mkdRelativeHolderLayout();
+            margin: 0;
+            clear: both;
+
+            > div {
+                position: relative;
+                display: inline-block;
+                vertical-align: top;
+                float: left;
+                padding: 0 13px 5px 0;
+
+                &:after {
+                    position: absolute;
+                    top: 0;
+                    right: 4px;
+                    content: '/';
+                }
+
+                &:last-child {
+                    padding: 0 0 5px;
+
+                    &:after {
+                        display: none;
+                    }
+                }
+                a {
+                    span {
+                        padding-left: 3px;
+                    }
+                }
+            }
+        }
+    }
+}

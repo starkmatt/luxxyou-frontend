@@ -1,0 +1,27 @@
+.mkd-header-minimal {
+    .mkd-page-header .mkd-menu-area {
+        box-sizing: border-box;
+
+        .mkd-position-right-inner {
+            height: auto;
+        }
+    }
+
+    .mkd-position-left:before,
+    .mkd-position-right:before {
+        content: "";
+    }
+
+    .mkd-page-header .mkd-sticky-header .mkd-position-left-inner {
+        height: auto;
+    }
+
+    .mkd-sticky-header .mkd-vertical-align-containers .mkd-position-right .mkd-position-right-inner {
+        height: auto;
+    }
+    
+    
+    
+    
+}
+

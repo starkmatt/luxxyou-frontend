@@ -1,0 +1,813 @@
+@import 'variables';
+@import 'mixins';
+
+/* ==========================================================================
+   #Comments styles - start
+   ========================================================================== */
+
+.mkd-comment-holder {
+    @include mkdRelativeHolderLayout();
+    margin: 0px -1000px;
+    padding: 0px 1000px;
+    border-bottom: 1px solid #e6e6e6;
+    padding-bottom: 60px;
+
+    &.mkd-comment-holder-no-comments {
+        padding-bottom: 0;
+        .mkd-comment-holder-inner {
+            padding: 0;
+        }
+    }
+
+    .mkd-comment-holder-inner {
+        padding: 41px 0 20px;
+        padding-left: 31px;
+    }
+	
+	.mkd-comment {
+		
+		&.mkd-pingback-comment {
+			
+			.mkd-comment-text {
+				padding: 0;
+			}
+		}
+	}
+
+    .mkd-comment-list {
+        list-style: none;
+        position: relative;
+        z-index: 150;
+        padding: 0;
+        margin: 0;
+        padding-top: 17px;
+
+        li {
+            @include mkdRelativeHolderLayout();
+            margin: 25px 0 0;
+            padding: 29px 0 0;
+        }
+
+        > li:first-child {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        .children {
+            padding: 0 0 0 112px;
+        }
+    }
+
+    .mkd-comments-title {
+        margin-bottom: 28px;
+        margin-top: 28px;
+
+        h3 {
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        > * {
+            margin: 0;
+        }
+    }
+
+    .mkd-comment-image {
+        position: relative;
+        display: block;
+        top: 10px;
+        left: 0;
+        width: 82px;
+        height: 82px;
+        float: left;
+
+        img {
+            display: block;
+            border-radius: 4em;
+        }
+    }
+
+    .mkd-comment-text {
+        padding: 0 0 0 112px;
+        min-height: 82px;
+
+        .mkd-comment-info {
+            @include mkdRelativeHolderLayout();
+            margin: 6px 0 1px;
+        }
+
+        .replay,
+        .comment-reply-link,
+        .comment-edit-link {
+            float: left;
+            font-size: 12px;
+            color: #323232;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 0.15em;
+
+            &:hover {
+                color: $default-heading-color;
+            }
+        }
+
+        .comment-reply-link {
+            margin-top: -5px;
+            &:after {
+                font-family: 'Linearicons-Free';
+                content: "\e87a";
+                font-size: 10px;
+                padding-left: 10px;
+            }
+        }
+
+        .mkd-comment-name {
+            float: left;
+            margin: 0;
+            text-transform: uppercase;
+
+            span {
+                color: #cacaca;
+                font-size: 12px;
+                letter-spacing: 0.1em;
+                padding-left: 9px;
+            }
+        }
+
+        .mkd-comment-date {
+            float: left;
+            margin: 0;
+            font-size: 12px;
+        }
+
+        .mkd-text-holder p {
+            margin: 7px 0;
+            color: $default-text-color;
+        }
+
+        .comment-respond {
+            margin: 20px 0;
+
+            .comment-reply-title {
+                margin: 0 0 10px;
+                font-size: 14px;
+            }
+
+            .logged-in-as {
+                margin: 0 0 8px;
+            }
+        }
+
+        #cancel-comment-reply-link {
+            margin-left: 10px;
+            font-size: 12px;
+            color: $first-main-color;
+
+            &:hover {
+                color: $default-heading-color;
+            }
+        }
+
+        li {
+            margin: 0 !important;
+            padding: 0 !important;
+            border: 0 !important;
+        }
+    }
+}
+
+.mkd-comment-form {
+    padding: 0;
+    clear: both;
+    box-sizing: border-box;
+    
+    .mkd-comment-form-inner {
+        padding: 87px 0 78px;
+    }
+    
+    .comment-reply-title {
+        margin: 0 0 32px;
+    }
+    
+    .logged-in-as {
+        margin: 0 0 8px;
+    }
+}
+
+@include laptop-landscape-medium {
+
+    .mkd-comment-holder {
+
+        .mkd-comment-list {
+
+            .children {
+                padding: 0 0 0 50px;
+            }
+        }
+    }
+}
+
+@include ipad-landscape {
+
+    .mkd-comment-holder {
+
+        .mkd-comment-list {
+
+            .children {
+                padding: 0 0 0 30px;
+            }
+        }
+    }
+}
+
+@include ipad-portrait {
+
+    .mkd-comment-holder {
+	    
+        .mkd-comment-list {
+	        
+            .children {
+                padding: 0;
+            }
+        }
+    }
+}
+
+@include phone-landscape {
+	
+    .mkd-comment-holder {
+	    
+        .mkd-comment-list {
+	        
+            .children {
+                padding: 0;
+            }
+        }
+
+        .mkd-comment-image {
+            float: none;
+        }
+
+        .mkd-comment-text {
+            padding: 40px 0 0;
+	        
+            .mkd-comment-date,
+            .mkd-comment-name {
+                float: none;
+            }
+	        
+            .replay,
+            .comment-reply-link,
+            .comment-edit-link {
+                float: none;
+                margin: 0 10px 0 0;
+            }
+        }
+    }
+}
+
+@include phone-portrait {
+	
+    .mkd-comment-holder {
+	    
+        .mkd-comment-list {
+	        
+            .children {
+                padding: 0;
+            }
+        }
+
+        .mkd-comment-image {
+            float: none;
+        }
+
+        .mkd-comment-text {
+            padding: 20px 0 0;
+            min-height: inherit;
+        }
+    }
+}
+
+/* ==========================================================================
+   #Comments styles - end
+   ========================================================================== */
+
+%input-style {
+    width: 100%;
+    margin: 0 0 15px;
+    padding: 16px 24px 15px;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: inherit;
+    color: $default-heading-color;
+    background-color: transparent;
+    border: 1px solid #d3d3d3;
+    border-radius: 0;
+    outline: 0;
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    @include mkdTransition(border-color 0.2s ease-in-out);
+
+    &:focus {
+        color: $default-heading-color;
+        border-color: #d3d3d3;
+        background-color: #fafafa;
+    }
+    
+    @include mkdPlaceholder {
+        color: $default-text-color;
+    }
+}
+
+#respond textarea,
+#respond input[type='text'],
+.post-password-form input[type='password'] {
+    @extend %input-style;
+    margin-top: 4px;
+    padding: 21px 24px 21px;
+    width: 78%;
+    line-height: 21px;
+}
+
+.post-password-form input[type='password'] {
+    width: 50%;
+}
+
+#respond textarea {
+    display: block;
+    padding: 21px 24px;
+    height: 180px;
+    width:  78%;
+}
+
+p.form-submit {
+    margin: 0;
+    margin-top: 7px;
+}
+
+#submit_comment,
+.post-password-form input[type='submit'] {
+    @include mkdButtonDefaultStyle();
+    @include mkdButtonMediumParams();
+    @include mkdButtonSolidColor();
+    padding: 13px 27px;
+    cursor: pointer;
+
+    &:hover {
+        @include mkdButtonSolidHoverColor();
+    }
+}
+
+.post-password-form input[type='submit'] {
+    height: 65px;
+}
+
+.mkd-newsletter {
+    text-align: center;
+    position: relative;
+    .wpcf7-not-valid-tip {
+        margin-top: 80px;
+        margin-bottom: 20px;
+    }
+    .wpcf7-form-control {
+        &.wpcf7-text {
+            margin: 0 0 15px;
+            padding: 20px 200px 18px 23px;
+            float: left;
+            height: 59px;
+        }
+    }
+}
+
+.mkd-newsletter {
+    .wpcf7-form-control {
+        &.wpcf7-submit {
+            padding-top: 13px;
+            padding-bottom: 13px;
+            border: none;
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 59px;
+            -webkit-border-radius: 0;
+            -moz-border-radius: 0;
+            border-radius: 0;
+            cursor:pointer;
+            @include mkdTransition(color .2s ease-in-out, background-color .2s ease-in-out, border-color .2s ease-in-out);
+
+            &:hover {
+                @include mkdButtonSolidHoverColor();
+            }
+        }
+    }
+}
+
+@include ipad-landscape {
+    .mkd-newsletter {
+        .wpcf7-form-control {
+            &.wpcf7-text {
+                padding: 20px 150px 18px 23px;
+            }
+        }
+    }
+}
+
+@include ipad-portrait {
+    .mkd-newsletter {
+        .wpcf7-form-control {
+            &.wpcf7-text {
+                padding: 20px 100px 18px 23px;
+            }
+        }
+    }
+}
+
+@include phone-portrait {
+    .mkd-newsletter {
+        .wpcf7-form-control {
+            &.wpcf7-text {
+                padding: 20px 50px 18px 23px;
+            }
+
+            &.wpcf7-submit {
+                position: relative;
+            }
+        }
+
+        span.ajax-loader {
+            display: block;
+            margin: 10px auto 0;
+        }
+    }
+}
+
+%cf7-input-style {
+    width: 100%;
+    margin: 0 0 15px;
+    padding: 20px 18px;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: inherit;
+    color: $default-text-color;
+    background-color: transparent;
+    border: 1px solid #d3d3d3;
+    border-radius: 0;
+    outline: 0;
+    -webkit-appearance: none;
+    box-sizing: border-box;
+
+    &:focus {
+        color: $default-heading-color;
+        background-color: #fafafa;
+    }
+	
+	@include mkdPlaceholder {
+		color: $default-text-color;
+	}
+}
+
+.wpcf7-form-control {
+    &.wpcf7-text,
+    &.wpcf7-number,
+    &.wpcf7-date,
+    &.wpcf7-textarea,
+    &.wpcf7-select,
+    &.wpcf7-quiz {
+        @extend %cf7-input-style;
+        margin-top: 2px;
+
+        footer & {
+            margin: 0;
+        }
+    }
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+
+}
+
+input.wpcf7-form-control.wpcf7-submit {
+    @include mkdButtonDefaultStyle();
+    @include mkdButtonMediumParams();
+    @include mkdButtonSolidColor();
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    cursor: pointer;
+
+    &:hover {
+        @include mkdButtonSolidHoverColor();
+    }
+}
+
+.wpcf7-form p {
+    margin: 0;
+}
+
+.wpcf7-form textarea {
+    vertical-align: middle;
+    height: 179px;
+}
+
+.mkd-two-columns-form-without-space {
+
+    .wpcf7-form .ajax-loader {
+        display: none;
+    }
+}
+/* ==========================================================================
+   #Comments styles - end
+   ========================================================================== */
+
+/* ==========================================================================
+   #Global Owl Slider - begin
+   ========================================================================== */
+.mkd-owl-slider{
+    visibility: hidden;
+
+    .owl-stage-outer {
+        z-index: 1;
+    }
+
+    &.mkd-slider-has-both-nav {
+
+        .owl-nav {
+
+            .owl-prev,
+            .owl-next {
+                $pos: calc(-50% - 19px); // 19 is is half height of pagination control
+                @include mkdTransform(translateY($pos));
+            }
+        }
+    }
+
+    .owl-nav {
+
+        .owl-prev,
+        .owl-next {
+            position: absolute;
+            top: 50%;
+            z-index: 3;
+            @include mkdTransform(translateY(-50%));
+
+            &:hover {
+
+                .mkd-prev-icon,
+                .mkd-next-icon {
+                    color: $default-text-color;
+                }
+            }
+        }
+
+        .owl-prev {
+            left: 30px;
+        }
+
+        .owl-next {
+            right: 30px;
+        }
+
+        .mkd-prev-icon,
+        .mkd-next-icon {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            color: $default-heading-color;
+            line-height: 1;
+            @include mkdTransition(color .2s ease-out);
+
+            .mkd-icon-arrow {
+                position: relative;
+                display: inline-block;
+                vertical-align: middle;
+                font-size: 46px;
+                line-height: inherit;
+
+                &:before {
+                    display: block;
+                    line-height: inherit;
+                }
+            }
+        }
+    }
+
+    .owl-dots {
+        text-align: center;
+        margin: 16px 0 0;
+
+        .owl-dot {
+            display: inline-block;
+            vertical-align: middle;
+
+            span {
+                display: inline-block;
+                vertical-align: middle;
+                width: 12px;
+                height: 12px;
+                margin: 0 6px;
+                border-radius: 3em;
+                background-color: transparent;
+                border: 2px solid rgba($default-heading-color, .5);
+                @include mkdTransition(background-color .2s ease-out, border .2s ease-out);
+                box-sizing: border-box;
+            }
+
+            &:hover,
+            &.active {
+
+                span {
+                    background-color: $default-heading-color;
+                    border-color: $default-heading-color;
+                }
+            }
+        }
+    }
+
+    .owl-carousel .owl-item img {
+        -webkit-transform: translateZ(0); //chrome text cut off fix
+    }
+}
+/* ==========================================================================
+   #Global Owl Slider - end
+   ========================================================================== */
+
+/* ==========================================================================
+   #404 styles - start
+   ========================================================================== */
+
+.mkd-404-page {
+
+    &.mkd-wrapper {
+        padding: 0 !important;
+    }
+    
+    .mkd-content {
+    }
+
+    .mkd-content-inner {
+        position: relative;
+        display: table;
+        height: 100%;
+        width: 100%;
+    }
+
+    .mkd-page-not-found {
+        position: relative;
+        display: table-cell;
+        width: 100%;
+        vertical-align: middle;
+        padding: 0 20%;
+        text-align: center;
+        height: 80vh;
+
+        @media screen and (max-width: 1000px) {
+            height: calc(100vh - 100px);
+        }
+
+
+
+        .mkd-icon-shortcode {
+            font-size: 72px;
+            color: $first-main-color;
+            margin-bottom: 40px;
+        }
+
+        .mkd-page-not-found-title {
+            margin: 0;
+            letter-spacing: 0.1em;
+            padding-top: 10px;
+        }
+	
+	    .mkd-page-not-found-subtitle {
+            margin: 35px 0 0;
+        }
+	    
+	    .mkd-page-not-found-text {
+            font-size: 20px;
+            color: $default-text-color;
+            width: 50%;
+            margin: -16px auto 0;
+            line-height: 27px;
+	    }
+
+        .mkd-btn {
+            margin: 50px 0 0;
+            letter-spacing: 0.2em;
+            padding: 12px 52px;
+        }
+    }
+
+    @include ipad-portrait {
+
+        .mkd-page-not-found {
+            padding: 0 30px;
+        }
+    }
+}
+
+/* ==========================================================================
+   #404 styles - end
+   ========================================================================== */
+
+/* ==========================================================================
+   #Back to Top styles - start
+   ========================================================================== */
+#mkd-back-to-top {
+    position: fixed;
+    width: 41px;
+    right: 25px;
+    bottom: 90px;
+    margin: 0;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+
+    &.off {
+        opacity: 0;
+        visibility: hidden;
+        @include mkdTransition(opacity 0.15s ease, visibility .0s .15s);
+    }
+
+    &.on {
+        opacity: 1;
+        visibility: visible;
+        @include mkdTransition(opacity 0.3s ease);
+    }
+
+    > span {
+        position: relative;
+        display: block;
+        width: 39px;
+        height: 39px;
+        line-height: 40px;
+        font-size: 15px;
+        text-align: center;
+        color: #fff;
+        background-color: $first-main-color;
+        border: 1px solid $first-main-color;
+        overflow: hidden;
+        @include mkdTransition(color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out);
+
+        i {
+            @include mkdTransition(.15s ease .05s);
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            z-index: 1;
+            top: 12px;
+            left: 50%;
+            @include mkdTransform(translateX(-50%));
+            height: 0;
+            width: 0;
+            opacity: 0;
+            border: 1px solid $default-border-color;
+            @include mkdTransition(0.2s cubic-bezier(0.54, 0.13, 0, 1.43));
+        }
+
+        &:hover {
+            background-color: $default-btn-hover-background-color;
+            border: 1px solid $default-btn-hover-background-color;
+
+            &:after {
+                height: 12px;
+                opacity: 1;
+                @include mkdTransition(0.45s cubic-bezier(0.54, 0.13, 0, 1) .05s);
+            }
+
+            i {
+                @include mkdTransform(translateY(-7px));
+                @include mkdTransition(.2s cubic-bezier(1,-1.21, 0.25, 1));
+            }
+        }
+    }
+
+    span span {
+        display: block;
+        line-height: inherit;
+    }
+}
+/* ==========================================================================
+   #Back to Top styles - end
+   ========================================================================== */
+
+/* ==========================================================================
+   #Self Hosted Video styles - begin
+   ========================================================================== */
+.mkd-self-hosted-video-holder {
+    .mkd-video-wrap {
+        .mejs-container,
+        .mejs-overlay-play {
+            height: 100% !important; /*!important because of the inline style*/
+            width: 100% !important; /*!important because of the inline style*/
+        }
+    }
+}
+/* ==========================================================================
+   #Self Hosted Video styles - end
+   ========================================================================== */

@@ -1,0 +1,129 @@
+/* ==========================================================================
+   Twitter widget style - begin
+   ========================================================================== */
+
+.widget.widget_mkd_twitter_widget {
+
+    margin: 0 0 20px;
+
+    > h4 {
+        margin: 0 0 8px;
+    }
+
+    .mkd-twitter-widget {
+        @include mkdRelativeHolderLayout();
+        margin: 0;
+
+        li {
+            @include mkdRelativeHolderLayout();
+
+            &:not(:last-child) {
+                margin: 0 0 12px !important;
+            }
+
+            .mkd-tweet-text {
+                position: relative;
+
+                a {
+                    position: relative;
+                    line-height: inherit;
+                    color: inherit;
+
+                    &.mkd-tweet-time {
+                        display: block;
+
+                        span {
+                            margin: 0 2px 0 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.mkd-twitter-standard {
+
+            li {
+
+                .mkd-twitter-icon {
+                    position: absolute;
+                    top: 2px;
+                    left: 0;
+
+                    i {
+                        font-size: 18px;
+                    }
+                }
+
+                .mkd-tweet-text {
+                    padding: 0 0 0 28px;
+                    font-size: 15px;
+
+                    a,
+                    span {
+                        color: $default-heading-color;
+                    }
+
+                    a {
+
+                        &:hover {
+                            color: $first-main-color;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.mkd-twitter-slider {
+            @include mkdRelativeHolderLayout();
+            padding: 0 40px;
+            text-align: center;
+            box-sizing: border-box;
+
+            li {
+                overflow: hidden;
+
+                .mkd-twitter-icon {
+
+                    i {
+                        font-size: 16px;
+                        color: $first-main-color;
+                    }
+                }
+
+                .mkd-tweet-text {
+                    font-size: 14px;
+
+                    a,
+                    span {
+                        color: $first-main-color;
+                    }
+
+                    a {
+
+                        &:hover {
+                            color: $default-heading-color;
+                        }
+
+                        &.mkd-tweet-time {
+                            margin: 21px 0 0;
+                        }
+                    }
+                }
+            }
+    
+            .owl-nav {
+                
+                .owl-prev {
+                    left: 0;
+                }
+    
+                .owl-next {
+                    right: 0;
+                }
+            }
+        }
+    }
+}
+/* ==========================================================================
+   Twitter widget style - end
+   ========================================================================== */

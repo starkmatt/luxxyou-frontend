@@ -1,0 +1,100 @@
+.mkd-header-standard-extended {
+
+    .mkd-page-header {
+        .mkd-logo-area {
+            box-sizing: border-box;
+            height: 90px;
+            z-index: 1; //to be above menu area in order to cover shadow
+
+            .mkd-logo-wrapper a {
+                max-height: 90px; //100*0.9
+            }
+
+            .mkd-vertical-align-containers {
+                .mkd-position-right-inner {
+                    height: auto;
+                }
+            }
+
+            .mkd-logo-widget-area {
+                margin-left: 8px;
+                position: relative;
+                display: inline-block;
+                vertical-align: middle;
+            }
+
+            .mkd-right-from-logo-widget {
+                float: left;
+                padding: 0 40px 0 0;
+                position: relative;
+
+
+                &:last-child {
+                    padding-right: 0;
+                }
+
+                &.widget_text{
+                    h6{
+                        text-align: left;
+                    }
+
+                    .mkd-iwt-title-holder h6 {
+                        font-size: 13px;
+                        margin-top: 2px;
+                        margin-bottom: 5px;
+                    }
+
+                    .mkd-iwt:not(.mkd-iwt-left-from-title) .mkd-iwt-title-holder {
+                        margin-bottom: 0;
+                    }
+
+                    .mkd-iwt-text-holder p {
+                        margin: 0;
+                        font-size: 13px;
+                        line-height: 1em;
+                    }
+
+                    .mkd-icon-top-left {
+                        float: left;
+                        margin-right: 15px;
+                    }
+
+                    .mkd-elements-top-right {
+                        float: left;
+                    }
+
+                }
+            }
+        }
+
+        .mkd-menu-area {
+            box-sizing: border-box;
+
+            height: 65px;
+
+            .mkd-logo-wrapper a {
+                max-height: 72px; //80*0.9
+            }
+
+            .mkd-main-menu {
+                margin-left: 0;
+
+                & > ul > li:first-child > a {
+                    padding-left: 0;
+                }
+            }
+
+            .mkd-vertical-align-containers {
+                .mkd-position-left-inner {
+                    height: 100%;
+                }
+
+                .mkd-position-right-inner {
+                    height: auto;
+                }
+            }
+        }
+    }
+
+}
+

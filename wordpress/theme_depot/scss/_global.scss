@@ -1,0 +1,768 @@
+/* #Reset default styles - start
+   ========================================================================== */
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font,
+ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    background: transparent;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+    outline: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, nav, section {
+    display: block;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: medium none;
+    vertical-align: middle;
+}
+
+table th {
+    border: 0;
+    padding: 5px 7px;
+    text-align: center;
+}
+
+table td {
+    padding: 5px 10px;
+    text-align: center;
+}
+
+a img {
+    border: none;
+}
+
+img, .wp-caption {
+    max-width: 100%;
+    height: auto;
+}
+
+iframe {
+    max-width: 100%;
+}
+
+/* #Reset default styles - end
+   ========================================================================== */
+
+/* #General styles that are used in our theme - start
+ * Here are defined global styles on body element, on container elements that hold every page,
+ * headings and links, inputs, core wp styles and default pagination styles
+   ========================================================================== */
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+.clear:after {
+    clear: both;
+    content: "";
+    display: block;
+}
+
+html {
+    overflow-y: scroll !important; /* for vertical split screen slider shortcode on touch devices */
+    overflow-x: hidden; /* for yith quciklook and select2 overflowing */
+}
+
+body {
+    font-family: $default-text-font;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 25px;
+    color: $default-text-color;
+    background-color: $default-background-color;
+    overflow-x: hidden !important;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 20px 0;
+    letter-spacing: 2px;
+    color: $default-heading-color;
+    text-transform: uppercase;
+    
+    a {
+        @include mkdTypographyLayout();
+        
+        &:hover {
+            color: $first-main-color;
+        }
+    }
+}
+
+h1 {
+    font-size: 45px;
+    line-height: 58px;
+    letter-spacing: 5px;
+}
+
+h2 {
+    font-size: 30px;
+    line-height: 48px;
+    letter-spacing: 3.7px;
+}
+
+h3 {
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: 2px;
+}
+
+h4 {
+    font-size: 16px;
+    line-height: 25px;
+}
+
+h5 {
+    font-size: 14px;
+    line-height: 22px;
+}
+
+h6 {
+    font-size: 12px;
+    line-height: 18px;
+}
+
+a,
+p a {
+    color: $default-heading-color;
+    text-decoration: none;
+    @include mkdTransition(color .2s ease-out);
+
+    &:hover {
+        color: $first-main-color;
+    }
+}
+
+p {
+    margin: 10px 0;
+}
+
+input[type='submit'] {
+    -webkit-appearance: none;
+}
+
+ul, ol {
+    list-style-position: inside;
+    margin: 15px 0;
+}
+
+ul ul,
+ol ol,
+ol ul,
+ul ol {
+    margin: 0;
+    padding: 0 0 0 15px;
+}
+
+pre {
+    background-color: $default-background-color;
+    padding: 15px;
+    max-width: 100%;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin: 15px 0;
+}
+
+dt {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+dd {
+    margin-bottom: 15px;
+}
+
+sub, sup {
+    font-size: 75%;
+    height: 0;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sub {
+    top: 0.5ex;
+}
+
+sup {
+    bottom: 0.5ex;
+}
+
+.wp-caption-text {
+    margin: 0;
+    font-style: italic;
+}
+
+table {
+    width: 100%;
+}
+
+table thead tr, table tbody tr {
+    border: 1px solid $default-border-color;
+}
+
+table tbody th {
+    border-right: 1px solid $default-border-color;
+}
+
+blockquote {
+    @include mkdRelativeHolderLayout();
+    margin: 10px 0;
+    padding: 0;
+    font-size: 18px;
+    line-height: 30px;
+    text-align: center;
+    quotes: none;
+    box-sizing: border-box;
+
+    > * {
+        @include mkdTypographyLayout();
+        margin: 0;
+    }
+
+    &:before,
+    &:after {
+        content: '';
+    }
+
+	cite {
+		font-style: normal;
+		font-weight: 400;
+	}
+}
+
+/* Webkit */
+::selection {
+    background: $first-main-color;
+    color: $default-background-color;
+}
+
+/* Gecko/Mozilla */
+::-moz-selection {
+    background: $first-main-color;
+    color: $default-background-color;
+}
+
+mark{
+    background: transparent;
+    color: $first-main-color;
+}
+
+.wp-caption,
+.wp-caption-text,
+.sticky,
+.gallery-caption,
+.bypostauthor {
+    opacity: 1;
+}
+
+.alignleft {
+    float: left;
+    margin: 0 20px 20px 0;
+}
+
+.alignright {
+    float: right;
+    margin: 0 0 20px 20px;
+}
+
+.aligncenter {
+    display: block;
+    margin: 10px auto;
+}
+
+.alignwide {
+    margin-left: auto;
+    margin-right: auto;
+    clear: both;
+}
+
+@include ipad-landscape {
+    .alignwide {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+.alignfull {
+    position: relative;
+    left: -1rem;
+    width: calc(100% + (2 * 1rem));
+    max-width: calc(100% + (2 * 1rem));
+    clear: both;
+}
+
+@include ipad-landscape {
+    .alignfull {
+        left: calc(-12.5% - 75px);
+        width: calc(125% + 150px);
+        max-width: calc(125% + 150px);
+        margin-top: calc(2 * 1rem);
+        margin-bottom: calc(2 * 1rem);
+    }
+}
+
+.text-align-right {
+    text-align: right;
+}
+
+.text-align-left {
+    text-align: left;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.mkd-wrapper {
+    position: relative;
+    left: 0;
+    z-index: 100;
+
+    .mkd-wrapper-inner {
+        width: 100%;
+        overflow: hidden;
+    }
+}
+
+.mkd-content {
+    position: relative;
+    margin-top: 0;
+    z-index: 100;
+    background-color: $default-background-color; /*this is needed because of the uncovering footer*/
+}
+
+.mkd-boxed {
+    overflow: hidden !important; /* this is because content jumping while using accordion and display:inline-block on 'body.mkd-boxed .mkd-wrapper'   */
+
+    .mkd-wrapper {
+        display: inline-block;
+        vertical-align: middle;
+        width: 100%;
+
+        .mkd-wrapper-inner {
+            width: $grid-width-boxed;
+            overflow: visible;
+            margin: auto;
+        }
+    }
+
+    .mkd-content {
+        overflow: hidden;
+    }
+
+    .mkd-footer-inner {
+        width: $grid-width-boxed;
+        margin: auto;
+    }
+
+    .mkd-page-header .mkd-sticky-header,
+    .mkd-page-header .mkd-fixed-wrapper.fixed {
+        width: $grid-width-boxed;
+        left: auto;
+    }
+}
+
+.mkd-paspartu-enabled {
+
+    .mkd-wrapper {
+        padding: 10px;
+        background-color: #fff;
+        box-sizing: border-box;
+    }
+
+    &.mkd-top-paspartu-disabled {
+
+        .mkd-wrapper {
+            padding-top: 0 !important;
+        }
+    }
+}
+
+.mkd-smooth-transition-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2000;
+}
+
+.mkd-container {
+    background-color: #fff; //beacuse of the Mikado Slider, since content have to go over it
+    position: relative;
+    padding: 0;
+    width: 100%;
+    z-index: 100;
+
+    &:before {
+        content: " ";
+        display: table;
+    }
+
+    &:after {
+        content: " ";
+        display: table;
+        clear: both;
+    }
+}
+
+.mkd-container-inner { //not in parent selector since this class is used for positioning other elements in grid
+    width: $grid-width;
+    margin: 0 auto;
+}
+
+.mkd-full-width {
+    position: relative;
+    z-index: 100;
+}
+
+.mkd-content .mkd-content-inner > .mkd-container > .mkd-container-inner,
+.mkd-content .mkd-content-inner > .mkd-full-width > .mkd-full-width-inner {
+	padding-top: 40px; // default value for content top padding
+}
+
+@media only screen and (min-width: 1400px) {
+
+    .mkd-grid-1300 {
+
+        .mkd-grid,
+        .mkd-container-inner,
+        .mkd-row-grid-section,
+        .mkd-footer-top-border-holder.mkd-in-grid,
+        .mkd-footer-bottom-border-holder.mkd-in-grid {
+            width: $grid-width-1300;
+        }
+    }
+
+    .mkd-grid-1300.mkd-boxed {
+
+        .mkd-footer-inner,
+        .mkd-wrapper-inner {
+            width: $grid-width-1300 + 50px;
+        }
+
+        .mkd-page-header .mkd-sticky-header,
+        .mkd-page-header .mkd-fixed-wrapper.fixed {
+            width: $grid-width-1300 + 50px;
+            left: auto;
+        }
+    }
+}
+
+@media only screen and (min-width: 1300px) {
+
+    .mkd-grid-1200 {
+
+        .mkd-grid,
+        .mkd-container-inner,
+        .mkd-row-grid-section,
+        .mkd-footer-top-border-holder.mkd-in-grid,
+        .mkd-footer-bottom-border-holder.mkd-in-grid {
+            width: $grid-width-1200;
+        }
+    }
+
+    .mkd-grid-1200.mkd-boxed {
+
+        .mkd-footer-inner,
+        .mkd-wrapper-inner {
+            width: $grid-width-1200 + 50px;
+        }
+
+        .mkd-page-header .mkd-sticky-header,
+        .mkd-page-header .mkd-fixed-wrapper.fixed {
+            width: $grid-width-1200 + 50px;
+            left: auto;
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+
+    .mkd-grid-1000 {
+
+        .mkd-grid,
+        .mkd-container-inner,
+        .mkd-row-grid-section,
+        .mkd-footer-top-border-holder.mkd-in-grid,
+        .mkd-footer-bottom-border-holder.mkd-in-grid {
+            width: $grid-width-1000;
+        }
+    }
+
+    .mkd-grid-1000.mkd-boxed {
+
+        .mkd-footer-inner,
+        .mkd-wrapper-inner {
+            width: $grid-width-1000 + 50px;
+        }
+
+        .mkd-page-header .mkd-sticky-header,
+        .mkd-page-header .mkd-fixed-wrapper.fixed {
+            width: $grid-width-1000 + 50px;
+            left: auto;
+        }
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .mkd-grid-800 {
+
+        .mkd-grid,
+        .mkd-container-inner,
+        .mkd-row-grid-section,
+        .mkd-footer-top-border-holder.mkd-in-grid,
+        .mkd-footer-bottom-border-holder.mkd-in-grid {
+            width: $grid-width-800;
+        }
+    }
+
+    .mkd-grid-800.mkd-boxed {
+
+        .mkd-footer-inner,
+        .mkd-wrapper-inner {
+            width: $grid-width-800 + 50px;
+        }
+
+        .mkd-page-header .mkd-sticky-header,
+        .mkd-page-header .mkd-fixed-wrapper.fixed {
+            width: $grid-width-800 + 50px;
+            left: auto;
+        }
+    }
+}
+
+/* #General styles that are used in our theme - end
+   ========================================================================== */
+
+@include keyframes(preload-background) {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100% 0;
+    }
+}
+
+.mkd-preload-background {
+    background-repeat: repeat !important;
+    background-color: transparent !important;
+    background-attachment: scroll !important;
+    background-size: inherit !important;
+    @include animation(preload-background, 40s, infinite, linear, 0s);
+}
+
+.mkd-grid {
+    width: $grid-width;
+    margin: 0 auto;
+}
+
+.mkd-vertical-align-containers {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding: 0 40px;
+    box-sizing: border-box;
+
+    &.mkd-25-50-25 {
+
+        .mkd-position-left,
+        .mkd-position-right {
+            width: 25%;
+        }
+
+        .mkd-position-center {
+            width: 50%;
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+        }
+
+    }
+
+    &.mkd-33-33-33 {
+
+        .mkd-position-left,
+        .mkd-position-center,
+        .mkd-position-right {
+            width: 33.33%;
+        }
+
+        .mkd-position-center {
+            width: 50%;
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+        }
+
+    }
+
+    &.mkd-50-50 {
+
+        .mkd-position-left,
+        .mkd-position-right {
+            width: 50%;
+        }
+
+    }
+
+    &.mkd-33-66 {
+        .mkd-position-left {
+            width: 33.33%;
+        }
+
+        .mkd-position-right {
+            width: 66.66%;
+        }
+    }
+
+    &.mkd-66-33 {
+        .mkd-position-left {
+            width: 66.66%;
+        }
+
+        .mkd-position-right {
+            width: 33.33%;
+        }
+    }
+
+    .mkd-position-left {
+        position: relative;
+        float: left;
+        z-index: 2;
+        height: 100%;
+    }
+    .mkd-position-center {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        text-align: center;
+        z-index: 1;
+    }
+
+    .mkd-position-right {
+        position: relative;
+        float: right;
+        z-index: 2;
+        height: 100%;
+        text-align: right;
+    }
+
+    .mkd-position-left-inner,
+    .mkd-position-center-inner,
+    .mkd-position-right-inner {
+        vertical-align: middle;
+        display: inline-block;
+    }
+    .mkd-position-right.mkd-has-widget .mkd-position-right-inner {
+        height: 100%;
+    }
+
+    .mkd-position-left:before,
+    .mkd-position-center:before,
+    .mkd-position-right:before {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        height: 100%;
+        margin-right: 0; /* adjusts for spacing */
+    }
+}
+
+/* ==========================================================================
+   #Row styles - start
+   ========================================================================== */
+
+.mkd-row-grid-section {
+    position: relative;
+    width: 1100px;
+    margin: 0 auto;
+    z-index: 20;
+}
+
+.mkd-content-aligment-left {
+    text-align: left;
+}
+
+.mkd-content-aligment-center {
+    text-align: center;
+}
+
+.mkd-content-aligment-right {
+    text-align: right;
+}
+
+.vc_row .wpb_gmaps_widget .wpb_wrapper {
+    padding: 0;
+    background-color: transparent;
+}
+
+/*visual composer override styles*/
+.wpb_row,
+.wpb_content_element,
+ul.wpb_thumbnails-fluid > li,
+.last_toggle_el_margin, .wpb_button {
+	margin-bottom: 0 !important; // important is in order to prevent visual composer styles in all cases
+}
+/* ==========================================================================
+   #Row styles - end
+   ========================================================================== */
+
+/* ==========================================================================
+   #Screen reader text - begin
+   ========================================================================== */
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    
+    &:focus {
+	    clip: auto !important;
+	    display: block;
+	    top: 5px;
+	    left: 5px;
+	    width: auto;
+	    height: auto;
+	    padding: 15px 23px 14px;
+	    color: #21759b;
+	    font-size: 14px;
+	    font-weight: bold;
+	    line-height: normal;
+	    text-decoration: none;
+	    background-color: #f1f1f1;
+	    border-radius: 3px;
+	    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+        z-index: 100000; /* Above WP toolbar. */
+    }
+}
+/* ==========================================================================
+   #Screen reader text - end
+   ========================================================================== */

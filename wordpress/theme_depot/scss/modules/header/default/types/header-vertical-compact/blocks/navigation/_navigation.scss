@@ -1,0 +1,104 @@
+@import "types/_float";
+
+.mkd-header-vertical-compact {
+
+    .mkd-vertical-menu-outer {
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0;
+        text-align: inherit;
+        width: 100%;
+        position: relative;
+        box-sizing: border-box;
+    }
+
+	.mkd-vertical-menu {
+        min-height: 0;
+        vertical-align: middle;
+
+        position: relative;
+		z-index: 101;
+		margin: 0;
+		text-align: left;
+
+		ul {
+			position: relative;
+			list-style-type: none;
+		}
+
+		ul li {
+			position: relative;
+            @include mkdTransition(background-color 0.15s ease);
+		}
+
+		& > ul > li {
+            > a {
+                height: $vertical-compact-menu-width;
+                text-align: center;
+                font-size: 26px;
+                position: relative;
+                display: block;
+                color: #878787;
+                font-weight: 400;
+                text-decoration: none;
+                cursor: pointer;
+                border-top: 1px solid rgba(0, 0, 0, 0.1);
+
+                @include mkdTransition(
+                        color 0.15s ease,
+                        text-decoration 0.15s ease,
+                        background-color 0.15s ease
+                );
+
+                .item_outer{
+                    @include mkdTableLayout();
+
+                    .item_inner{
+                        @include mkdTableCellLayout();
+                    }
+                }
+
+            }
+
+            &:last-child{
+                > a {
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+                }
+            }
+
+            &:hover {
+                background: $first-main-color;
+
+                a {
+                    color: #fff;
+                }
+
+                .second{
+                    top: 0;
+                }
+            }
+        }
+
+		& > ul > li > a > span.item_inner {
+			@include mkdTransition(text-decoration 0.2s ease);
+		}
+
+        .q_menu_arrow {
+            display: none;
+        }
+
+		.menu_icon_wrapper {
+            display: inline-block;
+            vertical-align: middle;
+		}
+
+        .mkd-menu-featured-icon {
+            color: $first-main-color;
+            display: inline-block !important;
+            font-size: 10px;
+            margin-left: 5px;
+            position: relative;
+            top: -3px;
+        }
+	}
+}

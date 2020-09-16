@@ -1,0 +1,200 @@
+/* ==========================================================================
+   Blog Slider shortcode style - begin
+   ========================================================================== */
+
+.mkd-blog-slider-holder {
+
+    .mkd-blog-slider-item {
+        @include mkdRelativeHolderLayout();
+        list-style-type: none;
+        text-align: center;
+
+        .mkd-item-image {
+            @include mkdRelativeHolderLayout();
+
+            &::after {
+                @include mkdAbsoluteHolderLayout();
+                content: "";
+                background: rgba($default-heading-color, 0.3);
+            }
+        }
+
+        .mkd-item-text-wrapper {
+            @include mkdAbsoluteHolderLayout();
+            opacity: 0;
+            @include mkdTransition(opacity 0.45s ease-out);
+        }
+
+        .mkd-item-text-holder {
+            @include mkdTableLayout();
+        }
+    
+        .mkd-item-text-holder-inner {
+            @include mkdTableCellLayout();
+            padding: 0 5%;
+        }
+    
+        .mkd-item-info-section{
+            margin-bottom: 5px;
+            color: #fff;
+
+            .mkd-post-info-category,
+            .mkd-post-info-comments-holder,
+            .mkd-post-info-author,
+            .mkd-post-info-date{
+              a,
+              span {
+                color: #fff;
+              }
+            }
+    
+            > div {
+                position: relative;
+                display: inline-block;
+                padding-right: 25px;
+                margin-left: 5px;
+        
+                &:after {
+                    content: "/";
+                    position: absolute;
+                    top: 0;
+                    right: 5px;
+                }
+        
+                &:first-child {
+                    margin-left: 0;
+                }
+        
+                &:last-child {
+            
+                    &:after {
+                        content: '';
+                    }
+                }
+        
+                span {
+                    color: #444;
+                }
+            }
+        }
+    
+        .mkd-item-title {
+            margin: 0 0 15px;
+            color: #fff;
+            margin-top: 40px;
+          
+            a {
+              &:hover {
+                color: #e6e6e6;
+              }
+            }
+        }
+
+        .mkd-section-button-holder {
+            @include mkdRelativeHolderLayout();
+            margin: 20px 0 0;
+
+            a {
+                color: #fff;
+
+                &:hover {
+                    color: #e6e6e6 !important;
+                }
+            }
+        }
+    }
+
+    .active.center {
+	    
+        .mkd-blog-slider-item {
+	        
+            .mkd-item-text-wrapper {
+                opacity: 1;
+            }
+        }
+    }
+	
+	.owl-nav {
+		
+		.owl-prev,
+		.owl-next {
+			position: absolute;
+			top: 50%;
+			z-index: 3;
+			@include mkdTransform(translateY(-50%));
+			
+			&:hover {
+				
+				.mkd-prev-icon,
+				.mkd-next-icon {
+					color: $first-main-color;
+				}
+			}
+		}
+		
+		.owl-prev {
+			left: 30px;
+		}
+		
+		.owl-next {
+			right: 30px;
+		}
+		
+		.mkd-prev-icon,
+		.mkd-next-icon {
+			position: relative;
+			display: inline-block;
+			vertical-align: middle;
+			color: $default-heading-color;
+			@include mkdTransition(color .2s ease-out);
+			
+			.mkd-icon-arrow {
+				position: relative;
+				display: inline-block;
+				vertical-align: top;
+				font-size: 46px;
+				line-height: 1em;
+				
+				&:before {
+					display: block;
+					line-height: inherit;
+				}
+			}
+		}
+	}
+
+    .owl-dots {
+        text-align: center;
+        margin: 16px 0 0;
+
+        .owl-dot {
+	        display: inline-block;
+	        vertical-align: middle;
+	
+	        span {
+		        display: inline-block;
+		        vertical-align: middle;
+		        width: 12px;
+		        height: 12px;
+		        margin: 0 6px;
+		        border-radius: 3em;
+		        background-color: transparent;
+		        border: 2px solid rgba($default-heading-color, .5);
+		        @include mkdTransition(background-color .2s ease-out, border .2s ease-out);
+		        box-sizing: border-box;
+	        }
+	
+	        &:hover,
+	        &.active {
+		
+		        span {
+			        background-color: $default-heading-color;
+			        border-color: $default-heading-color;
+		        }
+	        }
+        }
+    }
+}
+/* ==========================================================================
+   Blog Slider shortcode style - end
+   ========================================================================== */

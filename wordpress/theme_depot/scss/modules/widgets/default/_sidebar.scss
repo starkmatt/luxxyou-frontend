@@ -1,0 +1,194 @@
+// widgets spacing
+$widget-bottom-margin: 45px;
+$widget-bottom-padding: 15px;
+$widget-inner-padding: 15px;
+
+// widget color
+$widget-background-color: #eeeeee;
+
+// list items dimensions
+$widget-list-item-height: 20px;
+$widget-list-item-padding: 15px;
+
+// list items color
+$widget-list-item-background-color: #ffffff;
+
+// list items border
+$widget-list-item-border-color: $default-border-color;
+$widget-list-item-border-width: 1px;
+$widget-list-item-border-style: solid;
+
+// text
+$widget-text-color: inherit;
+$widget-heading-color: inherit;
+
+// links
+$widget-link-color: $first-main-color;
+$widget-link-hover-color: darken($default-text-color, 35%);
+
+// specific widgets
+$widget-search-form-height: 52px;
+$widget-tag-cloud-height: 30px;
+
+aside.mkd-sidebar {
+    position: relative;
+    z-index: 11;
+    margin: 0 0 60px;
+
+    div.widget {
+        margin-bottom: 55px;
+
+        ul {
+            margin-top: -2px;
+            li {
+                padding: 4px 0;
+                a {
+                    color: #929292;
+                    font-size: 14px;
+                    font-weight: 500;
+                }
+            }
+        }
+
+        &.widget_search {
+            div.input-holder {
+                border-color: #d3d3d3;
+                input {
+                    color: #b5b5b5;
+                    font-size: 14px;
+                    height: 43px;
+                    line-height: calc(43px - 2px);
+                }
+
+                button {
+                    height: 43px;
+                    line-height: calc(43px - 2px);
+                    color: #b5b5b5;
+                    font-size: 16px;
+                    padding: 0 6px;
+                }
+            }
+        }
+
+        div.mkd-widget-title-holder {
+            .mkd-widget-title {
+                margin-top: -4px;
+                text-transform: uppercase;
+                color: $first-main-color;
+                letter-spacing: 0.1em;
+            }
+        }
+
+        .textwidget p {
+            margin-top: 13px;
+        }
+
+        color: $default-text-color;
+
+        &:last-child {
+            margin: 0 !important;
+        }
+
+        &.widget_nav_menu {
+            border-top: none;
+            padding-top: 16px;
+
+            ul li a {
+                font-size: 14px;
+                color: $default-text-color;
+            }
+
+            .menu {
+                > li{
+                    padding: 0;
+
+                    > a{
+                        text-transform: none;
+                        color: $default-text-color;
+                        font-weight: 400;
+                        display: block;
+                        border-bottom: 1px solid $default-border-color;
+                        padding: 17px 0 13px;
+
+                        &:after{
+                            display: none;
+                        }
+
+
+
+                        &:hover {
+                            padding-left: 0;
+
+                            &:after {
+                                left: auto;
+                            }
+                        }
+                    }
+
+                    &.menu-item-has-children{
+                        > a:after {
+                            display: block;
+                            font-family: "ElegantIcons";
+                            content: "\43";
+                            left: auto;
+                            right: 0;
+                            top: 50%;
+                            @include mkdTransform(translateY(-50%));
+                        }
+                    }
+                }
+            }
+
+            .sub-menu {
+                display: none;
+                border: 0;
+                margin: 18px 0 16px;
+            }
+
+            .current-menu-ancestor > .sub-menu,
+            .current-menu-parent > .sub-menu {
+                display: block;
+            }
+        }
+    }
+}
+
+.wpb_widgetised_column {
+    position: relative;
+
+    .widget {
+
+        .mkd-sidearea-widget-title {
+            margin: 0 0 19px;
+        }
+
+        &:last-child {
+            margin: 0 !important;
+        }
+    }
+}
+
+aside.mkd-sidebar,
+.wpb_widgetised_column {
+    @import 'widgets/default-wordpress-widgets-flat';
+}
+
+.page {
+    &:not(.page-template-blog-standard) {
+        aside.mkd-sidebar {
+            div.widget {
+                &.widget_nav_menu {
+                    .menu {
+                        > li {
+                            > a {
+                                color: #323232;
+                                text-transform: uppercase;
+                                font-weight: 700;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

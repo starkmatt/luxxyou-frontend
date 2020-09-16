@@ -1,0 +1,133 @@
+/* ==========================================================================
+   Blog List - Chequered style - begin
+   ========================================================================== */
+
+.mkd-blog-holder {
+	
+    &.mkd-blog-chequered {
+
+        article {
+
+            .mkd-blog-masonry-gallery-link {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 2;
+            }
+	        
+            .mkd-post-content {
+                overflow: hidden;
+                height: 100%;
+                z-index: 3;
+            }
+
+            &.mkd-post-no-media {
+                .mkd-post-content{
+                    background-color: #f3f3f3;
+                }
+            }
+	        
+            .mkd-post-heading {
+	            height: 100%;
+	            margin-bottom: 0;
+
+                .mkd-post-image {
+                    height: 100%;
+                }
+            }
+	        
+            .mkd-post-title {
+                margin: 0;
+            }
+	        
+            .mkd-post-info-bottom {
+                position: absolute;
+                display: inline-block;
+                bottom: 22px;
+                left: 30px;
+                width: auto;
+                height: auto;
+            }
+
+            &.format-standard {
+	            
+                .mkd-post-text {
+	                position: absolute;
+	                top: 0;
+	                bottom: 0;
+	                width: 100%;
+	                padding: 30px;
+                    background-color: rgba($first-main-color, 0.9);
+	                opacity: 0;
+	                box-sizing: border-box;
+	                @include mkdTransition(opacity .3s);
+                }
+
+                &:hover .mkd-post-text {
+                    opacity: 1;
+                }
+            }
+
+            &.format-gallery {
+                .mkd-post-heading {
+                    position: relative;
+                }
+            }
+
+            &.format-link,
+            &.format-quote {
+	            
+                .mkd-post-text {
+                    @include mkdTableLayout();
+                    background-color: #f3f3f3;
+                    text-align: center;
+                }
+	            
+                .mkd-post-text-inner {
+                    @include mkdTableCellLayout();
+                    padding-top: 0;
+                    padding-bottom: 0;
+                    z-index: 1;
+                    box-sizing: border-box;
+                }
+	            
+                .mkd-post-mark{
+                    position: relative;
+	                top: auto;
+	                right: auto;
+	                width: auto;
+	                border: none;
+	                text-align: center;
+                }
+            }
+
+            &.format-audio {
+	            
+                .mkd-blog-audio-holder{
+                    display: none;
+                }
+            }
+
+            &.format-video,
+            &.format-audio {
+	            
+                .mkd-vb-play-icon {
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    width: 56px;
+                    height: 56px;
+                    font-size: 56px;
+                    color: #fff;
+                    z-index: 2;
+                    @include mkdTransform(translate(-50%, -50%));
+                }
+            }
+        }
+    }
+}
+/* ==========================================================================
+   Blog List - Chequered style - end
+   ========================================================================== */

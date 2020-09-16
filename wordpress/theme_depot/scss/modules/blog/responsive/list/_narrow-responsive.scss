@@ -1,0 +1,37 @@
+/* ==========================================================================
+   Blog List - Narrow responsive style - begin
+   ========================================================================== */
+
+.mkd-blog-holder {
+    
+    &.mkd-blog-narrow {
+
+        article,
+        .mkd-pagination {
+	        
+            @include ipad-landscape {
+                width: 80%;
+            }
+	        
+            @include ipad-portrait {
+                width: 90%;
+            }
+	        
+            @include phone-landscape {
+                width: 100%;
+            }
+        }
+
+        article {
+            
+            @include phone-landscape {
+                .mkd-post-excerpt {
+                    padding:0 20px;
+                }
+            }
+        }
+    }
+}
+/* ==========================================================================
+   Blog List - Narrow responsive style - end
+   ========================================================================== */

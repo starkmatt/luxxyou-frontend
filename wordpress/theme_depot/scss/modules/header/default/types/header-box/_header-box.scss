@@ -1,0 +1,53 @@
+.mkd-header-box{
+    .mkd-top-bar {
+        height: 55px;
+    }
+
+    .mkd-page-header {
+
+        .mkd-menu-area {
+            height: 90px;
+            box-sizing: border-box;
+            background-color: transparent;
+
+            .mkd-logo-wrapper a {
+                max-height: 80px; //100*0.9
+            }
+
+            .mkd-grid .mkd-vertical-align-containers {
+                box-sizing: initial;
+                margin: 0 -35px;
+                padding: 0 35px !important;
+                background-color: #fff;
+            }
+
+            .mkd-position-right-inner {
+                height: 100%;
+            }
+        }
+    }
+
+    .mkd-drop-down .wide .second > .inner > ul {
+        width: 1170px; //1100 + 70, 70 is 35 of padding on each side
+    }
+
+    &.mkd-grid-1000 .mkd-drop-down .wide .second > .inner > ul {
+        width: $grid-width-1000+70;
+    }
+
+    &.mkd-grid-800 .mkd-drop-down .wide .second > .inner > ul {
+        width: $grid-width-800+70;
+    }
+
+}
+@media only screen and (min-width: 1400px) {
+	.mkd-header-box.mkd-grid-1300 .mkd-drop-down .wide .second > .inner > ul {
+		width: $grid-width-1300+70;
+	}
+}
+@media only screen and (min-width: 1300px) {
+	.mkd-header-box.mkd-grid-1200 .mkd-drop-down .wide .second > .inner > ul {
+		width: $grid-width-1200+70;
+	}
+}
+

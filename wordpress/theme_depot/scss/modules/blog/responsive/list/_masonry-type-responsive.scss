@@ -1,0 +1,124 @@
+/* ==========================================================================
+   Blog Masonry general style - begin
+   ========================================================================== */
+
+@include laptop-landscape-large {
+	
+	.mkd-blog-holder {
+		
+		&.mkd-blog-type-masonry {
+			
+			$columns_number: ('five');
+			
+			@for $i from 0 to length($columns_number) {
+				&.mkd-blog-#{nth($columns_number,$i+1)}-columns {
+					$column_width: 100%/4;
+					
+					article,
+					.mkd-blog-masonry-grid-sizer {
+						width: $column_width;
+					}
+					
+                    article {
+
+                        &.mkd-post-size-large-width,
+                        &.mkd-post-size-large-width-height {
+                            width: 2*$column_width;
+                        }
+                    }
+				}
+			}
+		}
+	}
+}
+
+@include laptop-landscape {
+	
+	.mkd-blog-holder {
+		
+		&.mkd-blog-type-masonry {
+			
+			$columns_number: ('four', 'five');
+			
+			@for $i from 0 to length($columns_number) {
+				&.mkd-blog-#{nth($columns_number,$i+1)}-columns {
+					$column_width: 100% / 3;
+					
+					article,
+					.mkd-blog-masonry-grid-sizer {
+						width: $column_width;
+					}
+
+                    article {
+
+                        &.mkd-post-size-large-width,
+                        &.mkd-post-size-large-width-height {
+                            width: 2*$column_width;
+                        }
+                    }
+				}
+			}
+		}
+	}
+}
+
+@include ipad-landscape {
+	
+	.mkd-blog-holder {
+		
+		&.mkd-blog-type-masonry {
+			
+			$columns_number: ('three', 'four', 'five');
+			
+			@for $i from 0 to length($columns_number) {
+				&.mkd-blog-#{nth($columns_number,$i+1)}-columns {
+					
+					article,
+					.mkd-blog-masonry-grid-sizer {
+						width: 50%;
+					}
+
+                    article {
+
+                        &.mkd-post-size-large-width,
+                        &.mkd-post-size-large-width-height {
+                            width: 100%;
+                        }
+                    }
+				}
+			}
+		}
+	}
+}
+
+@include phone-landscape {
+	
+	.mkd-blog-holder {
+		
+		&.mkd-blog-type-masonry {
+			
+			$columns_number: ('two', 'three', 'four', 'five');
+			
+			@for $i from 0 to length($columns_number) {
+				&.mkd-blog-#{nth($columns_number,$i+1)}-columns {
+					
+					article,
+					.mkd-blog-masonry-grid-sizer {
+						width: 100%;
+					}
+					
+                    article {
+
+                        &.mkd-post-size-large-width,
+                        &.mkd-post-size-large-width-height {
+                            width: 100%;
+                        }
+                    }
+				}
+			}
+		}
+	}
+}
+/* ==========================================================================
+   Blog Masonry general style - end
+   ========================================================================== */

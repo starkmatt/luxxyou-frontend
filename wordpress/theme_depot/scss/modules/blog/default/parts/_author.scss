@@ -1,0 +1,99 @@
+/* Single author box styles - begin
+	====================================================================== */
+
+.mkd-author-description {
+    @include mkdRelativeHolderLayout();
+    text-align: center;
+    border-top: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+    margin: 0px -1000px;
+    padding: 0px 1000px;
+
+    .mkd-author-description-inner {
+        padding: 85px 0 85px;
+        min-height: 78px; // static height of author image -- mkd-author-description-image
+        clear: both;
+    }
+
+    .mkd-author-description-content {
+        position: relative;
+        padding: 0 30px;
+    }
+
+    .mkd-author-description-image {
+        margin: 0 auto;
+        position: relative;
+        display: block;
+        left: 0;
+        width: 160px;
+        height: 160px;
+        float: left;
+
+        img {
+            display: block;
+            border-radius: 5em;
+        }
+    }
+
+    .mkd-author-description-text-holder {
+        position: relative;
+        text-align: left;
+        padding: 0 0 0 195px;
+        padding-top: 20px;
+        min-height: 82px;
+
+        .mkd-author-name {
+            margin: 0;
+            margin-bottom: -7px;
+
+            a {
+                color: $first-main-color;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+
+                &:hover {
+                    color: $first-main-color;
+                }
+            }
+        }
+
+        .mkd-author-email {
+            margin: 0;
+        }
+
+        .mkd-author-text {
+            @include mkdRelativeHolderLayout();
+
+            > p {
+                margin: 17px 0 14px;
+                color: $default-text-color;
+            }
+        }
+
+        .mkd-author-social-icons {
+            @include mkdRelativeHolderLayout();
+            padding-top: 2px;
+
+            a {
+                position: relative;
+                display: inline-block;
+                vertical-align: middle;
+                padding: 0;
+                margin: 0 15px 0 0;
+                font-size: 12px;
+                color: #000;
+
+                &:last-child {
+                    margin: 0;
+                }
+
+                &:hover {
+                    color: $first-main-color;
+                }
+            }
+        }
+    }
+}
+
+/* Single author box styles - end
+	====================================================================== */

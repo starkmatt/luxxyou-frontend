@@ -1,0 +1,93 @@
+.mkd-header-divided .mkd-page-header{
+
+    .mkd-menu-area {
+        background-color: #fff;
+        box-sizing: border-box;
+        opacity: 0;
+
+        .mkd-grid {
+            height: 100%;
+        }
+    }
+
+    .mkd-logo-wrapper {
+
+        a {
+
+            img {
+                margin: 0 auto;
+            }
+        }
+    }
+
+    .mkd-main-menu {
+        width: auto;
+        margin: 0;
+
+        & > ul > li > a span.item_inner {
+            padding: 0px 28px;
+        }
+    }
+
+    .mkd-vertical-align-containers {
+
+        padding: 0;
+
+        .mkd-position-left {
+
+            .mkd-position-left-inner {
+                height: 100%;
+                text-align: left;
+                padding-right: 50px;
+
+                .mkd-main-menu-widget-area-left {
+                    position: relative;
+                    display: inline-block;
+                    vertical-align: middle;
+
+                    &:only-child {
+                        display: table;
+                        height: 100%;
+
+                        .mkd-main-menu-widget-area-left-inner {
+                            display: table-cell;
+                            vertical-align: middle;
+                        }
+                    }
+                }
+            }
+        }
+
+        .mkd-position-right {
+
+            .mkd-position-right-inner {
+                height: 100%;
+                padding-left: 50px;
+
+                .mkd-main-menu-widget-area {
+                    position: relative;
+                    display: inline-block;
+                    vertical-align: middle;
+                    height: 100%;
+
+                    .mkd-main-menu-widget-area-inner {
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    .mkd-page-header .mkd-sticky-header .mkd-sticky-holder .mkd-vertical-align-containers {
+        padding: 0;
+    }
+
+    .mkd-page-header .mkd-vertical-align-containers .mkd-position-center {
+        position: absolute;
+        width: 100%;
+    }
+
+    .mkd-page-header .mkd-sticky-header .mkd-position-center-inner {
+        height: auto;
+    }
+}

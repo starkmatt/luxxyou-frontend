@@ -1,0 +1,23 @@
+/* ==========================================================================
+#Sticky Nav header styles - start
+========================================================================== */
+.mkd-sticky-header {
+
+    body[class*='mkd-sticky'] & .mkd-search-opener .mkd-search-opener-wrapper {
+        top: 0;
+        @include mkdTransform(none);
+    }
+
+    .mkd-vertical-align-containers {
+
+        .mkd-position-right {
+
+            .mkd-position-right-inner {
+                height: 100%;
+            }
+        }
+    }
+}
+/* ==========================================================================
+#Sticky Nav header styles - end
+========================================================================== */

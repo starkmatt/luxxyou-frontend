@@ -1,0 +1,95 @@
+/* ==========================================================================
+   Blog List shortcode Common style - begin
+   ========================================================================== */
+
+.mkd-blog-list-holder {
+    @include mkdRelativeHolderLayout();
+    clear: both;
+
+    .mkd-blog-list {
+        @include mkdRelativeHolderLayout();
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+	
+	.mkd-bl-item {
+		@include mkdRelativeHolderLayout();
+		padding: 0;
+		margin: 0;
+		box-sizing: border-box;
+	}
+	
+	.mkd-bli-inner {
+		@include mkdRelativeHolderLayout();
+	}
+	
+	.mkd-bli-content {
+		@include mkdRelativeHolderLayout();
+		box-sizing: border-box;
+	}
+	
+	.mkd-post-image {
+		@include mkdRelativeHolderLayout();
+		
+		a, img {
+			display: block;
+		}
+	}
+
+	.mkd-post-title {
+		@include mkdTransition(opacity 0.3s ease);
+
+		&:hover {
+			opacity: 0.7;
+		}
+	}
+	
+	.mkd-bli-excerpt {
+		@include mkdRelativeHolderLayout();
+		margin: 0;
+	}
+
+    .mkd-blog-list-button {
+        @include mkdRelativeHolderLayout();
+        margin: 26px 0 0;
+    }
+
+
+	
+	/***** Columns Space style - begin *****/
+	
+	$columns_space_label: ('no', 'tiny', 'small', 'normal', 'large');
+	$columns_space: (0, 5, 10, 15, 40);
+	
+	@for $i from 0 to length($columns_space_label) {
+		&.mkd-bl-#{nth($columns_space_label,$i+1)}-space {
+			$column_width: nth($columns_space, $i+1);
+			$column_width_margin: $column_width * 2;
+			
+			.mkd-bl-wrapper {
+				@if($column_width == 0) {
+					margin: 0;
+				} @else {
+					margin: 0 -#{$column_width}px;
+				}
+			}
+			
+			.mkd-bl-item {
+				padding: 0 #{$column_width}px;
+				margin: 0 0 #{$column_width_margin}px;
+			}
+		}
+	}
+	
+	/***** Columns Space style - end *****/
+
+	&.mkd-bl-large-space {
+		.mkd-bl-item {
+			margin: 0 0 30px;
+		}
+	}
+}
+/* ==========================================================================
+   Blog List shortcode Common style - end
+   ========================================================================== */
