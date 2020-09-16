@@ -55,4 +55,5 @@ Unfortunately the Folder structure of
 ```
 Was to large to upload individually, so the contents of CSS was part uploaded into this Dir here.
 
+![Assets Folder](https://github.com/starkmatt/luxxyou-frontend/blob/master/wordpress/theme_depot/tree_img/image.png?raw=true)
     
